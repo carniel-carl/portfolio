@@ -1,0 +1,78 @@
+@import "./config";
+
+.float-nav {
+    position: fixed;
+    bottom: -20vh;
+    left: 50%;
+    width: 35vw;
+    transform: translateX(-50%);
+    background: rgba(56, 56, 56, 0.53);
+    transition: bottom .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    padding: 1rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(.1rem);
+
+
+    .icons {
+
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            color: var(--heading-clr);
+            font-size: 2rem;
+            padding: .3em;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50px;
+            display: grid;
+            place-content: center;
+            transition: all .6s;
+            transform: scale(1);
+
+            &:hover {
+                transform: scale(1.05);
+                color: lighten(#b6b6b6, $amount: 50%);
+            }
+
+            &.active {
+                background-color: var(--accent);
+                transform: scale(1.15);
+                color: lighten(#b6b6b6, $amount: 50%);
+            }
+        }
+    }
+
+
+    &.show {
+        bottom: 5vh;
+    }
+
+    @include tablet {
+        width:65vw;
+       
+        
+        .icons {
+            a{
+                font-size: 2.2rem;
+                width: 3.9rem;
+                height: 3.9rem;
+            }
+        }
+    }
+
+
+    @include mobile {
+        width:80vw;
+       
+        
+        .icons {
+            a{
+                font-size: 1.5rem;
+                width: 2.8rem;
+                height: 2.8rem;
+                transform: scale(.95);
+            }
+        }
+    }
+}

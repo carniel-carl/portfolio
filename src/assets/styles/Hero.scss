@@ -1,0 +1,134 @@
+@import "./config";
+
+.hero {
+    padding-block: 5vh;
+    padding-inline: 9vw;
+    display: flex;
+    flex-direction: column;
+    gap: 35vh;
+    // background: #F7BEA8;
+    background: var(--bg-grad);
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    // -webkit-clip-path: polygon(0 0, 100% 0, 16% 100%, 0 100%);
+    // clip-path: polygon(0 0, 100% 0, 16% 100%, 0 100%);
+    
+
+    h1 {
+        font-size: min(4rem, 3.5vw);
+        font-weight: var(--fw-400);
+        text-transform: uppercase;
+        line-height: 1.1;
+        // color: var(--heading-clr);
+       
+
+        .name-span,
+        .react-span {
+            font-style: italic;
+            text-transform: capitalize;
+            
+        }
+
+        .react-span {
+            // border-bottom: 2px solid var(--accent);
+            color: var(--heading-clr);
+
+            .code {
+                color: var(--accent);
+            }
+        }
+        
+        .name-span {
+            transition: color .4s;
+            cursor: pointer;
+            position: relative;
+            font-size: min(10.8rem, 85vw);
+            
+           
+            
+            display: inline-flex;
+
+            .spark-image {
+                width: 18vw;
+                position: absolute;
+                top: -70%;
+                right: -10%;
+                transform: scale(.8);
+                
+            }
+            &:hover {
+                color: var(--accent);
+
+                .spark-image {
+                    animation: shake .25s infinite;
+                    transform: scale(2);
+                }
+
+                @keyframes shake {
+                    0% {
+                        transform: rotate(0deg);
+                    } 
+                    50% {
+                        transform: rotate(8deg);
+                    } 
+                    100% {
+                        transform: rotate(0deg);
+                    } 
+                }
+            }
+
+
+        }
+        
+    }
+
+    @include tablet {
+        height: 55vh;
+        gap: 15vh;
+
+        h1 {
+
+            font-size: min(3.8rem, 5vw);
+
+            .name-span{
+                font-size: min(9rem, 12vw);
+            }
+        }
+
+
+        
+    }
+
+    @include mobile {
+
+        height: 60vh;
+        gap: 10vh;
+
+        h1 {
+            text-align: center;
+            font-size: min(5rem, 9vw);
+            line-height: 1.4;
+
+            .name-span{
+                font-size: min(9rem, 11vw);
+            }
+        }
+
+
+    }
+
+    @include wide_screen {
+        h1 {
+            font-size: min(4.5rem, 9vw);
+            line-height: 1.5;
+
+            .name-span{
+                font-size: min(10rem, 16vw);
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,61 @@
+@import "./config";
+
+.about {
+    // height: 90vh;
+    padding-block: 8vh;
+    display: flex;
+    align-items: center;
+    column-gap: 15rem;
+
+    .text-container,
+    .image-container {
+        flex: 1;
+    }
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        h2{
+            text-transform: uppercase;
+            color: var(--heading-clr);
+            font-size: clamp(2.5rem, 7vw, 8rem);
+        }
+
+        a {
+            @extend .btn-primary;
+            align-self: flex-start;
+        }
+    }
+
+    .image-container {
+        overflow: hidden;
+        max-height: 40rem;
+        max-width: 25rem;
+        border-radius: 20px;
+    }
+
+    @include tablet {
+        column-gap: 4rem;
+    }
+
+    @include mobile {
+        flex-direction: column-reverse;
+        row-gap: 3em;
+        margin-block: 5vh;
+
+        .text-container {
+            text-align: center;
+
+            a{
+                align-self: center;
+            }
+        }
+
+        .image-container {
+            max-height: 18rem;
+            max-width: 25rem;
+        }
+    }
+}

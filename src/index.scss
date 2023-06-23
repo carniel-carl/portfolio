@@ -1,0 +1,17 @@
+/* font-family: 
+font-family: 'Figtree', sans-serif; */
+
+@import "./assets/styles/config";
+
+html {
+  background-color: var(--bg);
+  overflow-x: hidden;
+  color: var(--txt-clr);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-cor);
+}
+
+

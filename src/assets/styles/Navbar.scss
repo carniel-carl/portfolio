@@ -1,0 +1,249 @@
+@import "./config";
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        max-width: 2rem;
+        height: auto;
+        
+    }
+
+    .nav-dropdown {
+
+        // HAMBURGER MENU FOR MOBILE
+        .hamburger-menu {
+            width: 2.5em;
+            height: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative; 
+            display: none;
+
+            span {
+                width: 100%;
+                height: .2em;
+                background-color: var(--heading-clr);
+                border-radius: .12em;
+                transition: all 1s;
+                
+
+                &::before,
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: .2em;
+                    border-radius: .12em;
+                    background-color: var(--heading-clr);
+                    position: absolute;
+                    transition: all 1s;
+                }
+
+                &::before {
+                    top: 20%;
+                }
+
+                &::after {
+                    bottom: 20%;
+                }
+            }
+
+        }
+
+        nav ul{
+            display: flex;
+            gap: 9rem;
+    
+            a {
+                text-transform: uppercase;
+                font-family: var(--ff-cor);
+            }
+    
+        }
+
+          // OPEN NAVBAR
+        &.open {
+
+            .hamburger-menu{
+                span {
+                    width: 0;
+                    
+    
+                    &::before {
+                        transform: rotate(320deg) translate(3%, -50%);
+                        top: 50%;
+                        
+                    }
+                    &::after {
+                        transform: rotate(-320deg) translate(3%, 50%);
+                        bottom: 50%;      
+                        
+                    }
+                    
+                }
+            }
+
+            nav {
+                transform: translate(0) scale(1);
+                opacity: 1;
+            }
+            
+        }
+
+        
+    }
+   
+    .toggle{
+        .flipswitch {
+            position: relative;
+            width: 84px;
+          }
+          .flipswitch input[type=checkbox] {
+            display: none;
+          }
+          .flipswitch-label {
+            display: block;
+            overflow: hidden;
+            cursor: pointer;
+            border: 0px solid #999999;
+            border-radius: 50px;
+          }
+          .flipswitch-inner {
+            width: 200%;
+            margin-left: -100%;
+            transition: margin 0.3s ease-in 0s;
+          }
+          .flipswitch-inner:before, .flipswitch-inner:after {
+            float: left;
+            width: 50%;
+            height: 35px;
+            padding: 0;
+            line-height: 35px;
+            font-size: 17px;
+            color: white;
+            font-family: Trebuchet, Arial, sans-serif;
+            font-weight: bold;
+            box-sizing: border-box;
+          }
+          .flipswitch-inner:before {
+            content: "OFF";
+            padding-left: 13px;
+            background-color: var(--heading-clr);
+            color: #FFFFFF;
+          }
+          .flipswitch-inner:after {
+            content: "ON";
+            padding-right: 13px;
+            background-color: var(--accent);
+            color: #f4f4f4;
+            text-align: right;
+          }
+          .flipswitch-switch {
+            width: 30px;
+            margin: 2.5px;
+            background: #FFFFFF;
+            border: 0px solid #999999;
+            border-radius: 50px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 48px;
+            transition: all 0.3s ease-in 0s;
+          }
+          .flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
+            margin-left: 0;
+            background: var(--bg);
+          }
+          .flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
+            right: 0;
+            background: var(--bg);
+          }
+          
+    }
+
+    @include tablet {
+        .nav-dropdown {
+            nav ul {
+                gap: 3rem;
+            
+            }
+        }
+
+     
+    }
+
+    @include mobile {
+
+        .nav-dropdown{
+
+            order: 1;
+            z-index: 25;
+
+            .hamburger-menu {
+               display: flex;
+            }
+
+            nav {
+
+                position: absolute;
+                height: 40vh;
+                width: 50vw;
+                top: 18%;
+                right: 8%;
+                background: var(--accent);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                border-radius: .6em;
+                transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+                opacity: 0;
+                transform: translate(100%, -100%) scale(0);
+            
+
+
+                ul{
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 1.5em;
+    
+                    li a{
+                        font-size: 1.4em;
+                        color: var(--heading-clr);
+                
+                            &:hover {
+                                // background-color: beige;  
+                            }
+                      
+                    }
+    
+                   
+                }
+                
+            }
+        }
+        
+    }
+
+    .overlay {
+        display: none;
+      
+        @include mobile {
+            &.add-overlay {
+                height: 100vh;
+                background: #000000;
+                opacity: 70%;
+                position: fixed;
+                z-index: 10;
+                width: 100%;
+                top: 0;
+                left: 0;
+                display: block;
+                overflow-y: hidden;
+            }
+        }
+    }
+}

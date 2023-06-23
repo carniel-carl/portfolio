@@ -1,0 +1,71 @@
+@import "./config";
+
+
+.skill-container {
+    padding-block: 8vh;
+    max-width: 80vw;
+    margin-inline: auto;
+    color: var(--heading-clr);
+    position: relative;
+
+    h2{
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .skills {
+
+        .skill {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+
+            &-title {
+                font-size: 1.2rem;
+            }
+            &-dash{
+                flex: 2;
+                background-color: var(--txt-clr);
+                height: .08rem;    
+            }
+            &-arrow{
+                max-width: 2.2rem;
+            }
+        }
+    }
+
+    .heart {
+        position: absolute;
+        width: 8vw;
+        top: -8%;
+        right: 25%;
+        z-index: -4;
+    }
+
+    @include mobile {
+        
+        .skill {
+            
+
+            &-arrow {
+                width: 1.4rem;
+
+            }
+        }
+
+        .heart {
+            width: 15vw;
+            top: 10%;
+            right: 15%;
+        }
+    }
+
+    @include tablet {
+        .heart {
+            width: 10vw;
+            top: 10%;
+            right: 15%;
+        }
+    }
+}

@@ -13,46 +13,6 @@ header {
 
     .nav-dropdown {
 
-        // HAMBURGER MENU FOR MOBILE
-        .hamburger-menu {
-            width: 2.5em;
-            height: 2em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative; 
-            display: none;
-
-            span {
-                width: 100%;
-                height: .2em;
-                background-color: var(--heading-clr);
-                border-radius: .12em;
-                transition: all 1s;
-                
-
-                &::before,
-                &::after {
-                    content: "";
-                    width: 100%;
-                    height: .2em;
-                    border-radius: .12em;
-                    background-color: var(--heading-clr);
-                    position: absolute;
-                    transition: all 1s;
-                }
-
-                &::before {
-                    top: 20%;
-                }
-
-                &::after {
-                    bottom: 20%;
-                }
-            }
-
-        }
-
         nav ul{
             display: flex;
             gap: 9rem;
@@ -60,37 +20,9 @@ header {
             a {
                 text-transform: uppercase;
                 font-family: var(--ff-cor);
+                font-weight: var(--fw-700);
             }
     
-        }
-
-          // OPEN NAVBAR
-        &.open {
-
-            .hamburger-menu{
-                span {
-                    width: 0;
-                    
-    
-                    &::before {
-                        transform: rotate(320deg) translate(3%, -50%);
-                        top: 50%;
-                        
-                    }
-                    &::after {
-                        transform: rotate(-320deg) translate(3%, 50%);
-                        bottom: 50%;      
-                        
-                    }
-                    
-                }
-            }
-
-            nav {
-                transform: translate(0) scale(1);
-                opacity: 1;
-            }
-            
         }
 
         
@@ -178,72 +110,12 @@ header {
     @include mobile {
 
         .nav-dropdown{
+            display: none;
 
-            order: 1;
-            z-index: 25;
-
-            .hamburger-menu {
-               display: flex;
-            }
-
-            nav {
-
-                position: absolute;
-                height: 40vh;
-                width: 50vw;
-                top: 18%;
-                right: 8%;
-                background: var(--accent);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                border-radius: .6em;
-                transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-                opacity: 0;
-                transform: translate(100%, -100%) scale(0);
-            
-
-
-                ul{
-                    flex-direction: column;
-                    width: 100%;
-                    gap: 1.5em;
-    
-                    li a{
-                        font-size: 1.4em;
-                        color: var(--heading-clr);
-                
-                            &:hover {
-                                // background-color: beige;  
-                            }
-                      
-                    }
-    
-                   
-                }
-                
-            }
         }
         
     }
 
-    .overlay {
-        display: none;
-      
-        @include mobile {
-            &.add-overlay {
-                height: 100vh;
-                background: #000000;
-                opacity: 70%;
-                position: fixed;
-                z-index: 10;
-                width: 100%;
-                top: 0;
-                left: 0;
-                display: block;
-                overflow-y: hidden;
-            }
-        }
-    }
+  
+
 }

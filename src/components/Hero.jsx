@@ -12,7 +12,7 @@ const Hero = () => {
 
       <h1>
         Hi, My Name is{" "}
-        <a href="/" className="name-span">
+        <a href="#about" className="name-span">
           <em>Nmugha Chimezie,</em>
           <div className="spark-image">
             <img src={spark} alt="spark doodle" />

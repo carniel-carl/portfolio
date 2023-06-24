@@ -17,15 +17,12 @@ function App() {
 
   useEffect(() => {
     const page = document.querySelector("html");
-    // const toggle = document.querySelector("toggle-switch");
 
     if (lightTheme === false) {
       page.classList.toggle("light", false);
-      // toggle.classList.remove("toggle-light", false);
     }
     if (lightTheme === true) {
       page.classList.toggle("light", true);
-      // toggle.classList.remove("toggle-light", true);
     }
   }, [lightTheme]);
 
@@ -39,11 +36,16 @@ function App() {
     <themeContext.Provider value={{ themeToggler, lightTheme }}>
       <main>
         <Hero />
+        <div className="divider" />
         <div className="App">
           <About />
+          <div className="divider" />
           <Project />
+          <div className="divider" />
           <Skills />
+          <div className="divider" />
           <Contact />
+          <div className="divider" />
           <Footer />
           <FloatNav />
         </div>

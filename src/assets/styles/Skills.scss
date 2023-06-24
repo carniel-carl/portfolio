@@ -2,7 +2,7 @@
 
 
 .skill-container {
-    padding-block: 8vh;
+    padding-block: 10vh;
     max-width: 80vw;
     margin-inline: auto;
     color: var(--heading-clr);
@@ -38,12 +38,14 @@
     .heart {
         position: absolute;
         width: 8vw;
-        top: -8%;
+        top: 10%;
         right: 25%;
         z-index: -4;
     }
 
     @include mobile {
+
+        padding-block: 5vh;
         
         .skill {
             
@@ -56,16 +58,18 @@
 
         .heart {
             width: 15vw;
-            top: 10%;
+            top: 20%;
             right: 15%;
         }
     }
 
     @include tablet {
+        padding-block: 5vh;
         .heart {
             width: 10vw;
-            top: 10%;
+            top: 20%;
             right: 15%;
         }
     }
+    
 }

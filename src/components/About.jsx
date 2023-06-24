@@ -15,15 +15,16 @@ const About = () => {
           Dolore, cupiditate nemo. Lorem ipsum dolor sit amet, consectetur
           adipisicing elit. Autem tenetur dolore soluta alias, quae qui eaque
           maxime totam dicta itaque excepturi optio sunt esse iusto, labore
-          tempore quam rem doloremque. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit.
+          tempore quam rem doloremque.
         </p>
 
         <a href="#projects">View Projects</a>
       </div>
 
       <div className="image-container">
-        <img src={profile} alt="profile pic" />
+        <div className="image">
+          <img src={profile} alt="profile pic" />
+        </div>
       </div>
     </section>
   );

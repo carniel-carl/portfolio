@@ -1,11 +1,10 @@
 @import "./config";
 
 .about {
-    // height: 90vh;
     padding-block: 8vh;
     display: flex;
     align-items: center;
-    column-gap: 15rem;
+    column-gap: 10rem;
 
     .text-container,
     .image-container {
@@ -30,10 +29,43 @@
     }
 
     .image-container {
-        overflow: hidden;
-        max-height: 40rem;
-        max-width: 25rem;
-        border-radius: 20px;
+        position: relative;
+        max-width: 23rem;
+        
+
+        .image {
+            max-height: 40rem;
+            max-width: 23rem;
+            border-radius: 20px;
+            overflow: hidden; 
+            transform: scale(.95);
+            transition: all .8s;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #F8CBBA;
+            bottom: -5%;
+            right: -5%;
+            z-index: -3;
+            border-radius: 20px;
+            // opacity: .3;
+            transform: rotate(-10deg) scale(1) translate(-3%, -5%);
+            transition: all .8s;
+        }
+
+        &:hover {
+            .image {
+                transform: scale(1.03);
+            }
+
+            &::before {
+                transform: rotate(0deg) scale(1) translate(3%, 5%);
+            }
+        }
     }
 
     @include tablet {
@@ -42,7 +74,7 @@
 
     @include mobile {
         flex-direction: column-reverse;
-        row-gap: 3em;
+        row-gap: 3.5em;
         margin-block: 5vh;
 
         .text-container {
@@ -54,8 +86,13 @@
         }
 
         .image-container {
-            max-height: 18rem;
-            max-width: 25rem;
+
+            .image{
+                max-height: 18rem;
+                max-width: 25rem;
+            }
+            
+    
         }
     }
 }

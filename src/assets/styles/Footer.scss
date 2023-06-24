@@ -1,0 +1,46 @@
+@import "./config";
+
+.footer {
+    font-family: var(--ff-fig);
+    padding-top: 7vh ;
+    margin-bottom: 20vh;
+    width: 100%;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .icons ul {
+        display: flex;
+        gap: 1.5rem;
+
+        li a {
+            font-size: 1.5rem;
+            display: inline-block;
+          
+            transition: all .5s;
+
+            &:hover {
+                color: lighten(#353535, $amount: 50%);
+                transform: scale(1.8);
+            }
+        }
+    }
+
+    @include tablet {
+        padding-top: 2vh ;
+        margin-top: 5vh;
+        margin-bottom: 15vh;
+    }
+
+    @include mobile {
+        padding-top: 2vh ;
+        margin-bottom: 18vh;
+
+        h3 {
+            font-size: .9rem;
+        }
+    }
+
+}

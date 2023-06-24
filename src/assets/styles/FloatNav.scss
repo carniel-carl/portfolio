@@ -19,7 +19,7 @@
         justify-content: space-around;
 
         a {
-            color: var(--heading-clr);
+            color: #b6b6b6;
             font-size: 2rem;
             padding: .3em;
             width: 4rem;
@@ -31,7 +31,7 @@
             transform: scale(1);
 
             &:hover {
-                transform: scale(1.05);
+                transform: scale(1.1);
                 color: lighten(#b6b6b6, $amount: 50%);
             }
 
@@ -73,6 +73,10 @@
                 height: 2.8rem;
                 transform: scale(.95);
             }
+        }
+
+        &.show {
+            bottom: 10vh;
         }
     }
 }

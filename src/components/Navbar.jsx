@@ -6,17 +6,7 @@ import logo from "./../assets/images/logo.svg";
 import { themeContext } from "../App";
 
 const Navbar = () => {
-  const [openSideBar, setOpenSideBar] = useState(false);
-
   const { themeToggler } = useContext(themeContext);
-
-  useEffect(() => {
-    if (openSideBar) {
-      document.querySelector(".overlay").classList.add("add-overlay");
-    } else {
-      document.querySelector(".overlay").classList.remove("add-overlay");
-    }
-  }, [openSideBar]);
 
   return (
     <header>
@@ -25,16 +15,7 @@ const Navbar = () => {
           <img src={logo} alt="logo" aria-hidden="true" />
         </a>
       </div>
-      <div className={`nav-dropdown ${openSideBar ? "open" : null}`}>
-        <div
-          className="hamburger-menu"
-          onClick={() => {
-            setOpenSideBar((prev) => !prev);
-          }}
-        >
-          <span></span>
-        </div>
-
+      <div className="nav-dropdown">
         <nav>
           <ul>
             <li>
@@ -68,13 +49,6 @@ const Navbar = () => {
           </label>
         </div>
       </div>
-
-      <div
-        className="overlay"
-        onClick={() => {
-          setOpenSideBar((prev) => !prev);
-        }}
-      ></div>
     </header>
   );
 };

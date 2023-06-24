@@ -5,15 +5,12 @@
     padding-inline: 9vw;
     display: flex;
     flex-direction: column;
-    gap: 35vh;
+    gap: 28vh;
     // background: #F7BEA8;
-    background: var(--bg-grad);
+    // background: var(--bg-grad);
     height: 100vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+   
 
-    // -webkit-clip-path: polygon(0 0, 100% 0, 16% 100%, 0 100%);
-    // clip-path: polygon(0 0, 100% 0, 16% 100%, 0 100%);
     
 
     h1 {
@@ -21,7 +18,6 @@
         font-weight: var(--fw-400);
         text-transform: uppercase;
         line-height: 1.1;
-        // color: var(--heading-clr);
        
 
         .name-span,
@@ -32,7 +28,6 @@
         }
 
         .react-span {
-            // border-bottom: 2px solid var(--accent);
             color: var(--heading-clr);
 
             .code {
@@ -45,6 +40,7 @@
             cursor: pointer;
             position: relative;
             font-size: min(10.8rem, 85vw);
+            white-space: nowrap;
             
            
             

@@ -1,10 +1,11 @@
 @import "./config";
 
 .about {
-    padding-block: 8vh;
+    padding-block: 15vh;
     display: flex;
     align-items: center;
-    column-gap: 10rem;
+    column-gap: 8rem;
+    flex-direction: row;
 
     .text-container,
     .image-container {
@@ -19,7 +20,7 @@
         h2{
             text-transform: uppercase;
             color: var(--heading-clr);
-            font-size: clamp(2.5rem, 7vw, 8rem);
+            font-size: clamp(2.5rem, 6vw, 8rem);
         }
 
         a {
@@ -70,12 +71,14 @@
 
     @include tablet {
         column-gap: 4rem;
+        padding-block: 8vh;
     }
 
     @include mobile {
-        flex-direction: column-reverse;
+        flex-direction: column;
         row-gap: 3.5em;
-        margin-block: 5vh;
+        margin-block: 15vw;
+        padding-block: 5vh;
 
         .text-container {
             text-align: center;
@@ -86,7 +89,7 @@
         }
 
         .image-container {
-
+            margin-top: 0;
             .image{
                 max-height: 18rem;
                 max-width: 25rem;

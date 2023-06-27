@@ -3,10 +3,13 @@ import React, { useEffect, useState, useContext } from "react";
 import "./../assets/styles/Navbar.scss";
 import logo from "./../assets/images/logo.svg";
 
+import { BsFillSunFill } from "react-icons/bs";
+import { FaMoon } from "react-icons/fa";
+
 import { themeContext } from "../App";
 
 const Navbar = () => {
-  const { themeToggler } = useContext(themeContext);
+  const { themeToggler, lightTheme } = useContext(themeContext);
 
   return (
     <header>
@@ -19,10 +22,10 @@ const Navbar = () => {
         <nav>
           <ul>
             <li>
-              <a href="#about">about me</a>
+              <a href="#about">about</a>
             </li>
             <li>
-              <a href="#project">Projects</a>
+              <a href="#projects">Projects</a>
             </li>
             <li>
               <a href="#skill">Skills</a>
@@ -34,20 +37,10 @@ const Navbar = () => {
         </nav>
       </div>
 
-      <div className="toggle">
-        <div className="flipswitch">
-          <input
-            type="checkbox"
-            name="flipswitch"
-            className="flipswitch-cb"
-            id="fs"
-            onChange={themeToggler}
-          />
-          <label className="flipswitch-label" htmlFor="fs">
-            <div className="flipswitch-inner"></div>
-            <div className="flipswitch-switch"></div>
-          </label>
-        </div>
+      <div className="toggle" onClick={themeToggler}>
+        <span className="theme-icon">
+          {lightTheme ? <FaMoon /> : <BsFillSunFill />}
+        </span>
       </div>
     </header>
   );

@@ -8,6 +8,11 @@ header {
     .logo {
         max-width: 2rem;
         height: auto;
+        transition: all .5s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
         
     }
 
@@ -15,12 +20,31 @@ header {
 
         nav ul{
             display: flex;
-            gap: 9rem;
+            gap: 5rem;
     
             a {
                 text-transform: uppercase;
                 font-family: var(--ff-cor);
                 font-weight: var(--fw-700);
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 0;
+                    height: .15rem;
+                    background-color: var(--accent);
+                    border-radius: .5rem;
+                    bottom: -30%;
+                    transition: all .5s;
+                    
+                }
+
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
             }
     
         }
@@ -29,77 +53,25 @@ header {
     }
    
     .toggle{
-        .flipswitch {
-            position: relative;
-            width: 84px;
-          }
-          .flipswitch input[type=checkbox] {
-            display: none;
-          }
-          .flipswitch-label {
-            display: block;
-            overflow: hidden;
-            cursor: pointer;
-            border: 0px solid #999999;
-            border-radius: 50px;
-          }
-          .flipswitch-inner {
-            width: 200%;
-            margin-left: -100%;
-            transition: margin 0.3s ease-in 0s;
-          }
-          .flipswitch-inner:before, .flipswitch-inner:after {
-            float: left;
-            width: 50%;
-            height: 35px;
-            padding: 0;
-            line-height: 35px;
-            font-size: 17px;
-            color: white;
-            font-family: Trebuchet, Arial, sans-serif;
-            font-weight: bold;
-            box-sizing: border-box;
-          }
-          .flipswitch-inner:before {
-            content: "OFF";
-            padding-left: 13px;
-            background-color: var(--heading-clr);
-            color: #FFFFFF;
-          }
-          .flipswitch-inner:after {
-            content: "ON";
-            padding-right: 13px;
-            background-color: var(--accent);
-            color: #f4f4f4;
-            text-align: right;
-          }
-          .flipswitch-switch {
-            width: 30px;
-            margin: 2.5px;
-            background: #FFFFFF;
-            border: 0px solid #999999;
-            border-radius: 50px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 48px;
-            transition: all 0.3s ease-in 0s;
-          }
-          .flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
-            margin-left: 0;
-            background: var(--bg);
-          }
-          .flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
-            right: 0;
-            background: var(--bg);
-          }
-          
+        cursor: pointer;
+        transition: all .5s;
+        .theme-icon {
+          font-size: min(2.5rem, 7vw);
+          color: var(--heading-clr);
+          transition: all .6s;
+        } 
+        
+        &:hover {
+            transform: scale(1.2);
+            transform-origin: center;
+        }
     }
 
     @include tablet {
         .nav-dropdown {
+          display: none;
             nav ul {
-                gap: 3rem;
+                gap: 2rem;
             
             }
         }

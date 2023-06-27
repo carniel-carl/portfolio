@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import "./App.scss";
 
 import Hero from "./components/Hero";
@@ -33,24 +34,30 @@ function App() {
   };
 
   return (
-    <themeContext.Provider value={{ themeToggler, lightTheme }}>
-      <main>
-        <Hero />
-        <div className="divider" />
-        <div className="App">
-          <About />
+    <AnimatePresence>
+      <themeContext.Provider value={{ themeToggler, lightTheme }}>
+        <main>
+          <Hero />
           <div className="divider" />
-          <Project />
-          <div className="divider" />
-          <Skills />
-          <div className="divider" />
-          <Contact />
-          <div className="divider" />
-          <Footer />
-          <FloatNav />
-        </div>
-      </main>
-    </themeContext.Provider>
+          <div className="App">
+            <About />
+
+            <div className="divider" />
+
+            <Project />
+            <div className="divider" />
+
+            <Skills />
+            <div className="divider" />
+
+            <Contact />
+            <div className="divider" />
+            <Footer />
+            <FloatNav />
+          </div>
+        </main>
+      </themeContext.Provider>
+    </AnimatePresence>
   );
 }
 

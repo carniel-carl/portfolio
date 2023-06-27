@@ -1,6 +1,8 @@
+@import "./assets/styles/config";
+
 main {
   .App {
-    margin-inline: 9vw;
+    margin-inline: 15vw;
   }
 
   .divider{
@@ -9,5 +11,16 @@ main {
     border-bottom-width: .3rem;
     margin-inline: auto;
     margin-block: 4vh;
+  }
+
+  @include tablet {
+    .App {
+      margin-inline: 8.5vw;
+    }
+  }
+  @include mobile {
+    .App {
+      margin-inline: 7.5vw;
+    }
   }
 }

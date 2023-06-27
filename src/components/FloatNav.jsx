@@ -24,7 +24,7 @@ const FloatNav = () => {
       timeoutid = setTimeout(() => {
         setIsScrolling(false);
         setShowFloatNav(true);
-      }, 1200);
+      }, 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -86,7 +86,6 @@ const FloatNav = () => {
           onClick={() => {
             setActive("#");
           }}
-          className={active === "#" ? "active" : ""}
         >
           <FaHome />
         </a>
@@ -95,16 +94,14 @@ const FloatNav = () => {
           onClick={() => {
             setActive("#about");
           }}
-          className={active === "#about" ? "active" : ""}
         >
           <GoPersonFill />
         </a>
         <a
-          href="#project"
+          href="#projects"
           onClick={() => {
-            setActive("#project");
+            setActive("#projects");
           }}
-          className={active === "#project" ? "active" : ""}
         >
           <MdWork />
         </a>
@@ -113,7 +110,6 @@ const FloatNav = () => {
           onClick={() => {
             setActive("#skill");
           }}
-          className={active === "#skill" ? "active" : ""}
         >
           <FaTools />
         </a>
@@ -122,7 +118,6 @@ const FloatNav = () => {
           onClick={() => {
             setActive("#contact");
           }}
-          className={active === "#contact" ? "active" : ""}
         >
           <BsChatDotsFill />
         </a>

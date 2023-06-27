@@ -8,11 +8,12 @@
   box-sizing: border-box;
 }
 
+
 :root {
-    --bg: #000000;
+    --bg: #16151d;
     --accent: #eb5e27; 
     --txt-clr: #818181;
-    --heading-clr:#b6b6b6;
+    --heading-clr:#dedede;
     --bg-grad:linear-gradient(45deg, var(--bg) 0%, #252422 100%);
     --ff-cor: 'Cormorant Garamond', serif;
     --ff-fig: 'Figtree', sans-serif;
@@ -58,9 +59,11 @@ img {
     background-color: var(--accent);
     padding: .8rem 1.4rem;
     text-transform: uppercase;
-    border-radius: .5rem;
+    border-radius: .7rem;
     font-family: var(--ff-fig);
     font-weight: var(--fw-400);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-sec {
@@ -72,6 +75,7 @@ img {
   font-family: var(--ff-fig);
   font-weight: var(--fw-400);
   border: .1rem solid var(--accent);
+  cursor: pointer;
 }
 
 

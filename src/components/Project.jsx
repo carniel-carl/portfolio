@@ -3,7 +3,7 @@ import "../assets/styles/Project.scss";
 
 const Project = () => {
   return (
-    <section id="project" className="project">
+    <section id="projects" className="project">
       Project
     </section>
   );

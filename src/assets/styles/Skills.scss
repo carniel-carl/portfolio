@@ -11,6 +11,7 @@
     h2{
         margin-bottom: 2rem;
         font-size: 2rem;
+        text-align: center;
     }
 
     .skills {
@@ -41,6 +42,7 @@
         top: 10%;
         right: 25%;
         z-index: -4;
+        opacity: .3;
     }
 
     @include mobile {
@@ -64,7 +66,7 @@
     }
 
     @include tablet {
-        padding-block: 5vh;
+        padding-block: 8vh;
         .heart {
             width: 10vw;
             top: 20%;

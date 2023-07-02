@@ -68,11 +68,6 @@ const FloatNav = () => {
             link.classList.remove("active");
           });
           navlinks[index].classList.add("active");
-
-          // sections.forEach((sec) => {
-          //   sec.classList.remove("animate");
-          // });
-          // section.classList.add("animate");
         }
       });
     });
@@ -83,6 +78,7 @@ const FloatNav = () => {
       <div className="icons">
         <a
           href="#"
+          className="active"
           onClick={() => {
             setActive("#");
           }}

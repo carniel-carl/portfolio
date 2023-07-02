@@ -1,83 +1,89 @@
 @import "./config";
 
 .float-nav {
-    position: fixed;
-    bottom: -20vh;
-    left: 50%;
-    width: 35vw;
-    transform: translateX(-50%);
-    background: rgba(56, 56, 56, 0.53);
-    transition: bottom .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    padding: 1rem;
-    border-radius: 3rem;
-    backdrop-filter: blur(.1rem);
-    z-index: 10;
+  position: fixed;
+  bottom: 50vh;
+  left: 2vw;
+  width: 7vw;
+  height: auto;
+  transform: translateY(50%);
+  background: rgba(56, 56, 56, 0.53);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  padding: 1rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(0.1rem);
+  z-index: 10;
 
+  .icons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+      color: #b6b6b6;
+      font-size: 2rem;
+      padding: 0.3em;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50px;
+      display: grid;
+      place-content: center;
+      transition: all 0.6s;
+      transform: scale(1);
+
+      &:hover {
+        transform: scale(1.2);
+        color: lighten(#b6b6b6, $amount: 50%);
+      }
+
+      &.active {
+        background-color: var(--accent);
+        transform: scale(1.15);
+        color: lighten(#b6b6b6, $amount: 50%);
+      }
+    }
+  }
+
+  @include tablet {
+    width: 65vw;
+    bottom: -15vh;
+    left: 50vw;
+    transform: translateX(-50%);
 
     .icons {
-
-        display: flex;
-        justify-content: space-around;
-
-        a {
-            color: #b6b6b6;
-            font-size: 2rem;
-            padding: .3em;
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50px;
-            display: grid;
-            place-content: center;
-            transition: all .6s;
-            transform: scale(1);
-
-            &:hover {
-                transform: scale(1.2);
-                color: lighten(#b6b6b6, $amount: 50%);
-            }
-
-            &.active {
-                background-color: var(--accent);
-                transform: scale(1.15);
-                color: lighten(#b6b6b6, $amount: 50%);
-            }
-        }
+      flex-direction: row;
+      a {
+        font-size: 2.2rem;
+        width: 3.9rem;
+        height: 3.9rem;
+      }
     }
-
 
     &.show {
-        bottom: 5vh;
+      bottom: 5vh;
+    }
+  }
+
+  @include mobile {
+    width: 80vw;
+    bottom: -15vh;
+    left: 50vw;
+    transform: translateX(-50%);
+
+    .icons {
+      flex-direction: row;
+      a {
+        font-size: 1.5rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        transform: scale(0.95);
+      }
     }
 
-    @include tablet {
-        width:65vw;
-       
-        
-        .icons {
-            a{
-                font-size: 2.2rem;
-                width: 3.9rem;
-                height: 3.9rem;
-            }
-        }
+    &.show {
+      bottom: 10vh;
     }
-
-
-    @include mobile {
-        width:80vw;
-       
-        
-        .icons {
-            a{
-                font-size: 1.5rem;
-                width: 2.8rem;
-                height: 2.8rem;
-                transform: scale(.95);
-            }
-        }
-
-        &.show {
-            bottom: 10vh;
-        }
-    }
+  }
 }

@@ -1,93 +1,79 @@
 @import "./config";
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    .logo {
-        max-width: 2rem;
-        height: auto;
-        transition: all .5s;
+  .logo {
+    max-width: 2rem;
+    height: auto;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .nav-dropdown {
+    nav ul {
+      display: flex;
+      gap: 5rem;
+
+      a {
+        text-transform: uppercase;
+        font-family: var(--ff-cor);
+        font-weight: var(--fw-700);
+        position: relative;
+        font-size: 0.9rem;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0.15rem;
+          background-color: var(--accent);
+          border-radius: 0.5rem;
+          bottom: -30%;
+          transition: all 0.5s;
+        }
 
         &:hover {
-            transform: scale(1.2);
+          &::before {
+            width: 100%;
+          }
         }
-        
+      }
+    }
+  }
+
+  .toggle {
+    cursor: pointer;
+    transition: all 0.5s;
+    .theme-icon {
+      font-size: min(2.5rem, 7vw);
+      color: var(--heading-clr);
+      transition: all 0.6s;
     }
 
+    &:hover {
+      transform: scale(1.2);
+      transform-origin: center;
+    }
+  }
+
+  @include tablet {
     .nav-dropdown {
-
-        nav ul{
-            display: flex;
-            gap: 5rem;
-    
-            a {
-                text-transform: uppercase;
-                font-family: var(--ff-cor);
-                font-weight: var(--fw-700);
-                position: relative;
-
-                &::before {
-                    position: absolute;
-                    content: "";
-                    width: 0;
-                    height: .15rem;
-                    background-color: var(--accent);
-                    border-radius: .5rem;
-                    bottom: -30%;
-                    transition: all .5s;
-                    
-                }
-
-                &:hover {
-                    &::before {
-                        width: 100%;
-                    }
-                }
-            }
-    
-        }
-
-        
+      display: none;
+      nav ul {
+        gap: 2rem;
+      }
     }
-   
-    .toggle{
-        cursor: pointer;
-        transition: all .5s;
-        .theme-icon {
-          font-size: min(2.5rem, 7vw);
-          color: var(--heading-clr);
-          transition: all .6s;
-        } 
-        
-        &:hover {
-            transform: scale(1.2);
-            transform-origin: center;
-        }
+  }
+
+  @include mobile {
+    .nav-dropdown {
+      display: none;
     }
-
-    @include tablet {
-        .nav-dropdown {
-          display: none;
-            nav ul {
-                gap: 2rem;
-            
-            }
-        }
-
-     
-    }
-
-    @include mobile {
-
-        .nav-dropdown{
-            display: none;
-
-        }
-        
-    }
-
-  
-
+  }
 }

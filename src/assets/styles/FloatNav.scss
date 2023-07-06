@@ -2,11 +2,13 @@
 
 .float-nav {
   position: fixed;
-  bottom: 50vh;
-  left: 2vw;
-  width: 7vw;
-  height: auto;
-  transform: translateY(50%);
+  width: 30vw;
+  bottom: -25vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  // width: 7vw;
+  // height: auto;
+  // transform: translateY(50%);
   background: rgba(56, 56, 56, 0.53);
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   padding: 1rem;
@@ -16,8 +18,8 @@
 
   .icons {
     display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
+    // flex-direction: column;
+    gap: 0.5rem;
     justify-content: space-around;
     align-items: center;
 
@@ -44,6 +46,10 @@
         color: lighten(#b6b6b6, $amount: 50%);
       }
     }
+  }
+
+  &.show {
+    bottom: 3vh;
   }
 
   @include tablet {

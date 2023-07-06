@@ -9,7 +9,6 @@ import { MdWork } from "react-icons/md";
 
 const FloatNav = () => {
   const [showFloatNav, setShowFloatNav] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
 
   const [active, setActive] = useState("#");
 
@@ -19,10 +18,9 @@ const FloatNav = () => {
 
     const handleScroll = () => {
       clearTimeout(timeoutid);
-      setIsScrolling(true);
+      setShowFloatNav(false);
 
       timeoutid = setTimeout(() => {
-        setIsScrolling(false);
         setShowFloatNav(true);
       }, 1000);
     };
@@ -35,20 +33,7 @@ const FloatNav = () => {
     };
   }, []);
 
-  // SHOWING THE FLOATING NAVIGATION
-  useEffect(() => {
-    const handleScrollResume = () => {
-      setShowFloatNav(false);
-    };
-
-    window.addEventListener("scroll", handleScrollResume);
-
-    return () => {
-      window.removeEventListener("scroll", handleScrollResume);
-    };
-  }, []);
-
-  // SETTING THE ACTIVE NAV LINK BASE ON SCROLL
+  // SETTING THE ACTIVE NAV LINK BASED ON SCROLLED POSITION
   useEffect(() => {
     const navlinks = document.querySelectorAll(".float-nav a");
     const sections = document.querySelectorAll("section");

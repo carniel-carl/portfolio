@@ -92,34 +92,34 @@ const Contact = () => {
           <h4>Write a project to me</h4>
           <form action="" className="project-form">
             <div className="input-area">
-              <label htmlFor="name">Name</label>
               <input
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Write your name"
+                placeholder="Name"
                 className="input"
               />
+              <label htmlFor="name">Name</label>
             </div>
             <div className="input-area">
-              <label htmlFor="email">Email</label>
               <input
                 type="text"
                 name="email"
                 id="email"
-                placeholder="Write your email"
+                placeholder="email"
                 className="input"
               />
+              <label htmlFor="email">Email</label>
             </div>
             <div className="input-area textarea">
-              <label htmlFor="project">Project</label>
               <textarea
                 type="textarea"
                 name="project"
                 id="project"
-                placeholder="Write your project"
+                placeholder="project"
                 className="input"
               />
+              <label htmlFor="project">Project</label>
             </div>
 
             <button className="submit">

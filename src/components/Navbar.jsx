@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <header>
       <div className="logo">
-        <a href="/">
+        <a href="#">
           <img src={logo} alt="logo" aria-hidden="true" />
         </a>
       </div>

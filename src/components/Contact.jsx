@@ -89,7 +89,7 @@ const Contact = () => {
           exit={{ x: "100vw" }}
           transition={{ duration: 2 }}
         >
-          <h4>Write a project to me</h4>
+          <h4>Connect with me</h4>
           <form action="" className="project-form">
             <div className="input-area">
               <input type="text" name="name" required className="input" />

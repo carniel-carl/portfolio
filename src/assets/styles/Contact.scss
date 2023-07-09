@@ -32,8 +32,8 @@
       margin-bottom: 3rem;
       color: var(--heading-clr);
       font-size: 1.2rem;
-      // margin-left: 2rem;
-      margin-inline: auto;
+      margin-left: 2rem;
+      // margin-inline: auto;
     }
 
     // HIRE CONTAINER STYLE
@@ -47,7 +47,7 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        align-self: center;
+        align-self: flex-start;
       }
     }
 
@@ -152,7 +152,7 @@
       gap: 25vw;
 
       h4 {
-        // margin-left: unset;
+        margin-left: unset;
       }
 
       .hire-container {

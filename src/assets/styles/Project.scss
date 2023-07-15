@@ -3,6 +3,7 @@
 .projects {
   padding-block: 12vh;
   text-align: center;
+  position: relative;
 
   &__heading {
     color: var(--heading-clr);
@@ -14,11 +15,11 @@
     cursor: grab;
 
     .projects_content {
-      padding-block: 3rem;
+      padding: 3rem 2rem;
+
       .project {
         max-width: 19rem;
         height: 27rem;
-        margin-inline: 1rem;
         border-radius: 0.6rem;
         overflow: hidden;
         text-align: left;
@@ -58,21 +59,26 @@
           font-size: 3rem;
           color: var(--heading-clr);
           transition: all 0.3s;
+
           &:hover {
             transform: scale(1.2);
           }
         }
 
         &__next {
-          right: 0;
+          right: -1%;
         }
 
         &__prev {
-          left: 0;
+          left: -1%;
         }
 
-        @include mobile {
-          width: 100%;
+        .slider-pagination {
+          --swiper-pagination-color: var(--accent);
+          --swiper-pagination-bullet-size: 0.8rem;
+          --swiper-pagination-bullet-inactive-color: var(--txt-clr);
+          --swiper-pagination-bullet-size: 0.6rem;
+          --swiper-pagination-bullet-horizontal-gap: 0.4rem;
         }
       }
     }
@@ -87,7 +93,14 @@
 
     .carousel {
       .projects_content {
-        padding-block: 1rem;
+        padding: 1rem;
+
+        .slider-controls {
+          &__next,
+          &__prev {
+            font-size: 2rem;
+          }
+        }
       }
     }
   }

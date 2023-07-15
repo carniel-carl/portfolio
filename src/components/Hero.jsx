@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 
@@ -54,6 +54,21 @@ const slideVariant = {
 };
 
 const Hero = () => {
+  useEffect(() => {
+    const parallax = document.querySelector(".bg");
+
+    const scrollOffset = () => {
+      let offset = window.scrollY;
+      parallax.style.backgroundPositionY = -offset * 0.5 + "px";
+    };
+
+    window.addEventListener("scroll", scrollOffset);
+
+    return () => {
+      window.removeEventListener("scroll", scrollOffset);
+    };
+  }, []);
+
   return (
     <motion.section
       id="hero"
@@ -88,10 +103,8 @@ const Hero = () => {
             </span>
           </motion.h2>
         </motion.div>
-        <div className="hero-image">
-          <img src={profile} alt="profile picture" />
-        </div>
       </div>
+      <div className="bg"></div>
     </motion.section>
   );
 };

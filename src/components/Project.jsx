@@ -1,14 +1,23 @@
 import React, { useEffect, useState, useRef } from "react";
+
+import { motion } from "framer-motion";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  EffectCoverflow,
+} from "swiper/modules";
 
 // Import Swiper styles
-import "swiper/css";
+import "swiper/scss";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import "swiper/scss/pagination";
+import "swiper/scss/navigation";
+import "swiper/css/scrollbar";
 
 import "../assets/styles/Project.scss";
 
@@ -46,25 +55,85 @@ const datas = [
   },
 ];
 
+const upVariant = {
+  offscreen: {
+    opacity: 0,
+    y: -50,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "tween",
+      duration: 1,
+    },
+  },
+};
+
+const slideVariant = {
+  offscreen: {
+    opacity: 0,
+    x: "100vw",
+  },
+  onscreen: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "tween",
+      duration: 1,
+    },
+  },
+};
+
 const Project = () => {
   return (
-    <section id="projects" className="projects">
-      <h2 className="projects__heading">
+    <motion.section
+      id="projects"
+      className="projects"
+      transition={{ staggerChildren: 0.8 }}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.35 }}
+    >
+      <motion.h2
+        className="projects__heading"
+        variants={upVariant}
+        exit={{ y: -50 }}
+        transition={{ duration: 0.5 }}
+      >
         Check out some of my exciting projects
-      </h2>
-      <div className="carousel">
+      </motion.h2>
+      <motion.div
+        className="carousel"
+        variants={slideVariant}
+        exit={{ x: "100vw" }}
+        transition={{ duration: 0.8 }}
+      >
         <Swiper
-          slidesPerView={"auto"}
+          slidesPerView={2}
+          spaceBetween={35}
+          breakpoints={{
+            600: {
+              slidesPerView: "auto",
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          }}
           grabCursor={true}
-          centeredSlides={true}
-          loop={true}
-          pagination={{ el: ".slider-pagination", clickable: true }}
+          centeredSlides={false}
+          loop={false}
+          direction="horizontal"
+          pagination={{
+            el: ".slider-pagination",
+            clickable: true,
+          }}
           navigation={{
             nextEl: ".slider-controls__next",
             prevEl: ".slider-controls__prev",
             clickable: true,
           }}
-          modules={[EffectCoverflow, Pagination, Navigation]}
+          modules={[EffectCoverflow, Pagination, Navigation, Scrollbar]}
           className="projects_content"
         >
           {datas.map((data) => {
@@ -89,8 +158,8 @@ const Project = () => {
             <div className="slider-pagination"></div>
           </div>
         </Swiper>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

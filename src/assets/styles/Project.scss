@@ -7,29 +7,28 @@
   &__heading {
     color: var(--heading-clr);
     font-size: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
   }
 
   .carousel {
     cursor: grab;
-    overflow: hidden;
-    padding: 2rem;
 
     .projects_content {
-      display: flex;
-      gap: 1.5rem;
-
+      padding-block: 3rem;
       .project {
-        min-width: 18rem;
-        height: 25rem;
+        max-width: 19rem;
+        height: 27rem;
+        margin-inline: 1rem;
         border-radius: 0.6rem;
         overflow: hidden;
         text-align: left;
         background-color: var(--heading-clr);
+        transition: all 0.5s;
 
         &__image {
           width: 100%;
           height: 80%;
+          overflow: hidden;
           background-color: #8d4a31;
         }
 
@@ -38,6 +37,57 @@
           margin-top: 0.8rem;
           padding-left: 0.8rem;
         }
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+
+      .slider-controls {
+        cursor: pointer;
+        user-select: none;
+        margin-top: 2rem;
+        width: 100%;
+        margin-inline: auto;
+
+        &__next,
+        &__prev {
+          position: absolute;
+          top: 35%;
+          z-index: 10;
+          font-size: 3rem;
+          color: var(--heading-clr);
+          transition: all 0.3s;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+
+        &__next {
+          right: 0;
+        }
+
+        &__prev {
+          left: 0;
+        }
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding-block: 4vh;
+
+    &__heading {
+      margin-bottom: 0.5rem;
+    }
+
+    .carousel {
+      .projects_content {
+        padding-block: 1rem;
       }
     }
   }

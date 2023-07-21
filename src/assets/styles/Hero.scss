@@ -40,59 +40,18 @@
 
       .name-span,
       .react-span {
-        font-style: italic;
         text-transform: capitalize;
       }
 
       h2 {
         font-size: 1.5rem;
         font-weight: var(--fw-400);
-
-        .react-span {
-          color: var(--heading-clr);
-          font-size: 2rem;
-
-          .code {
-            color: var(--accent);
-          }
-        }
       }
 
       .name-span {
         transition: color 0.4s;
-        cursor: pointer;
-        position: relative;
         font-size: 5.5rem;
-        white-space: nowrap;
-        display: inline-flex;
-
-        .spark-image {
-          width: 12vw;
-          position: absolute;
-          top: -70%;
-          right: -10%;
-          transform: scale(0.8);
-        }
-        &:hover {
-          color: var(--accent);
-
-          .spark-image {
-            animation: shake 0.25s infinite;
-            transform: scale(1.2);
-          }
-
-          @keyframes shake {
-            0% {
-              transform: rotate(0deg);
-            }
-            50% {
-              transform: rotate(8deg);
-            }
-            100% {
-              transform: rotate(0deg);
-            }
-          }
-        }
+        // white-space: nowrap;
       }
     }
   }
@@ -110,11 +69,6 @@
       .hero-text {
         h2 {
           font-size: min(2rem, 3vw);
-
-          .react-span {
-            font-size: 1.5rem;
-            white-space: nowrap;
-          }
         }
 
         .name-span {
@@ -142,20 +96,10 @@
         line-height: 1.3;
         h2 {
           font-size: min(1.8rem, 6vw);
-
-          .react-span {
-            font-size: 2rem;
-            white-space: nowrap;
-          }
         }
 
         .name-span {
-          font-size: max(2.6rem, 9vw);
-
-          .spark-image {
-            top: -12%;
-            right: -5%;
-          }
+          font-size: max(2.5rem, 9vw);
         }
       }
     }

@@ -93,7 +93,7 @@ const Project = () => {
       transition={{ staggerChildren: 0.8 }}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: false, amount: 0.35 }}
+      viewport={{ once: true, amount: 0.35 }}
     >
       <motion.h2
         className="projects__heading"

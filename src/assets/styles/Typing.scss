@@ -1,0 +1,18 @@
+@import "./config";
+
+.type {
+  &::after {
+    content: "|";
+    color: var(--accent);
+  }
+
+  &.blink::after {
+    animation: blink 1s step-start infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}

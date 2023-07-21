@@ -42,7 +42,7 @@ const About = () => {
       transition={{ staggerChildren: 0.4 }}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: false, amount: 0.35 }}
+      viewport={{ once: true, amount: 0.35 }}
     >
       <motion.div
         className="image-container"

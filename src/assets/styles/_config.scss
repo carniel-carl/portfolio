@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Figtree&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Figtree&display=swap");
 
 *,
 *::before,
@@ -8,18 +8,16 @@
   box-sizing: border-box;
 }
 
-
 :root {
-    --bg: #16151d;
-    --accent: #eb5e27; 
-    --txt-clr: #818181;
-    --heading-clr:#dedede;
-    --bg-grad:linear-gradient(45deg, var(--bg) 0%, #252422 100%);
-    --ff-cor: 'Cormorant Garamond', serif;
-    --ff-fig: 'Figtree', sans-serif;
-    --fw-400: 400;
-    --fw-700: 700;
-
+  --bg: #16151d;
+  --accent: #eb5e27;
+  --txt-clr: #818181;
+  --heading-clr: #dedede;
+  --bg-grad: linear-gradient(45deg, var(--bg) 0%, #252422 100%);
+  --ff-cor: "Cormorant Garamond", serif;
+  --ff-fig: "Figtree", sans-serif;
+  --fw-400: 400;
+  --fw-700: 700;
 }
 
 a {
@@ -36,54 +34,50 @@ img {
   display: block;
 }
 
-
 @mixin mobile {
-    @media screen and (width < 599px){
-      @content
-    }
-};
+  @media screen and (width < 599px) {
+    @content;
+  }
+}
 
 @mixin tablet {
-    @media screen and (width > 600px) and (width < 1199px ){
-      @content
-    }
-};
+  @media screen and (width > 600px) and (width < 1199px) {
+    @content;
+  }
+}
 @mixin wide_screen {
-    @media screen and (width > 1500px){
-      @content
-    }
-};
+  @media screen and (width > 1500px) {
+    @content;
+  }
+}
 
 .btn-primary {
-    color: #faf9f6;
-    background-color: var(--accent);
-    padding: .8rem 1.4rem;
-    text-transform: uppercase;
-    border-radius: .7rem;
-    font-family: var(--ff-fig);
-    font-weight: var(--fw-400);
-    border: none;
-    cursor: pointer;
+  color: #faf9f6;
+  background-color: var(--accent);
+  padding: 0.8rem 1.4rem;
+  text-transform: uppercase;
+  border-radius: 0.7rem;
+  font-family: var(--ff-fig);
+  font-weight: var(--fw-400);
+  border: none;
+  cursor: pointer;
 }
 
 .btn-sec {
   color: var(--heading-clr);
   background-color: transparent;
-  padding: .8rem 1.4rem;
+  padding: 0.8rem 1.4rem;
   text-transform: uppercase;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-family: var(--ff-fig);
   font-weight: var(--fw-400);
-  border: .1rem solid var(--accent);
+  border: 0.1rem solid var(--accent);
   cursor: pointer;
 }
 
-
-
 .light {
-  --bg:#faf9f6;
+  --bg: #faf9f6;
   --txt-clr: #545454;
   --heading-clr: #222020;
-  --bg-grad:linear-gradient(45deg, var(--bg) 0%, var(--bg) 100%);
-  
+  --bg-grad: linear-gradient(45deg, var(--bg) 0%, var(--bg) 100%);
 }

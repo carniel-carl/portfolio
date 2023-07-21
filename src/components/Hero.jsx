@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 
 import "./../assets/styles/Hero.scss";
 
-import spark from "./../assets/images/spark-icon.svg";
-import profile from "./../assets/images/profile-pic.jpg";
+import Typing from "./Typing";
 
 const upVariant = {
   offscreen: {
@@ -23,37 +22,10 @@ const upVariant = {
   },
 };
 
-const downVariant = {
-  offscreen: {
-    opacity: 0,
-    y: "80vh",
-  },
-  onscreen: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      duration: 1.5,
-    },
-  },
-};
-
-const slideVariant = {
-  offscreen: {
-    opacity: 0,
-    x: "100vw",
-  },
-  onscreen: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      duration: 1,
-    },
-  },
-};
+const titles = ["Nmugha Chimezie", "React Developer", "Frontend Developer"];
 
 const Hero = () => {
+  // Background parallax
   useEffect(() => {
     const parallax = document.querySelector(".bg");
 
@@ -76,33 +48,20 @@ const Hero = () => {
       transition={{ staggerChildren: 0.8 }}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: false, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.div variants={upVariant}>
         <Navbar />
       </motion.div>
 
       <div className="hero-items">
-        <motion.div className="hero-text" variants={upVariant}>
-          <motion.h2 variants={upVariant}>Hi, My Name is</motion.h2>
-          <motion.a href="#about" className="name-span" variants={slideVariant}>
-            <em>Nmugha Chimezie,</em>
-            <div className="spark-image">
-              <motion.img
-                src={spark}
-                alt="spark doodle"
-                variants={slideVariant}
-              />
-            </div>
-          </motion.a>
-          <motion.h2 variants={downVariant}>
-            I'm a Frontend{" "}
-            <span className="react-span">
-              <span className="code">&lt;</span>
-              <em>React developer.</em> <span className="code">&#47;&gt;</span>
-            </span>
-          </motion.h2>
-        </motion.div>
+        <div className="hero-text" variants={upVariant}>
+          <motion.h2 variants={upVariant}>Hi, I'm</motion.h2>
+
+          <a href="#about" className="name-span">
+            <Typing />
+          </a>
+        </div>
       </div>
       <div className="bg"></div>
     </motion.section>

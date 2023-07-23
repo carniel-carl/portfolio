@@ -39,7 +39,7 @@
       }
 
       &.active {
-        background-color: var(--accent);
+        background: var(--accent);
         transform: scale(1.15);
         color: lighten(#b6b6b6, $amount: 50%);
       }
@@ -83,7 +83,7 @@
     }
 
     &.show {
-      bottom: 10vh;
+      bottom: 4vh;
     }
   }
 }

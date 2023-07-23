@@ -1,77 +1,70 @@
 @import "./config";
 
-
 .skill-container {
-    padding-block: 10vh;
-    max-width: 80vw;
-    margin-inline: auto;
-    color: var(--heading-clr);
-    position: relative;
+  padding-block: 10vh;
+  max-width: 80vw;
+  margin-inline: auto;
+  color: var(--heading-clr);
+  position: relative;
 
-    h2{
-        margin-bottom: 2rem;
-        font-size: 2rem;
-        text-align: center;
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .skills {
+    .skill {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      &-title {
+        font-size: 1.2rem;
+      }
+      &-dash {
+        flex: 2;
+        background-color: var(--txt-clr);
+        height: 0.08rem;
+      }
+      &-arrow {
+        max-width: 2.2rem;
+      }
     }
+  }
 
-    .skills {
+  .heart {
+    position: absolute;
+    width: 8vw;
+    top: 10%;
+    right: 25%;
+    z-index: -4;
+    opacity: 0.3;
+  }
 
-        .skill {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+  @include mobile {
+    padding-block: 5vh;
 
-            &-title {
-                font-size: 1.2rem;
-            }
-            &-dash{
-                flex: 2;
-                background-color: var(--txt-clr);
-                height: .08rem;    
-            }
-            &-arrow{
-                max-width: 2.2rem;
-            }
-        }
+    .skill {
+      &-arrow {
+        width: 1.4rem;
+      }
     }
 
     .heart {
-        position: absolute;
-        width: 8vw;
-        top: 10%;
-        right: 25%;
-        z-index: -4;
-        opacity: .3;
+      width: 15vw;
+      top: 20%;
+      right: 15%;
     }
+  }
 
-    @include mobile {
-
-        padding-block: 5vh;
-        
-        .skill {
-            
-
-            &-arrow {
-                width: 1.4rem;
-
-            }
-        }
-
-        .heart {
-            width: 15vw;
-            top: 20%;
-            right: 15%;
-        }
+  @include tablet {
+    padding-block: 8vh;
+    .heart {
+      width: 10vw;
+      top: 20%;
+      right: 15%;
     }
-
-    @include tablet {
-        padding-block: 8vh;
-        .heart {
-            width: 10vw;
-            top: 20%;
-            right: 15%;
-        }
-    }
-    
+  }
 }

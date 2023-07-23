@@ -28,7 +28,7 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 15vw;
 
-    h4 {
+    p {
       margin-bottom: 3rem;
       color: var(--heading-clr);
       font-size: 1.2rem;
@@ -151,7 +151,7 @@
       grid-template-columns: 1fr;
       gap: 25vw;
 
-      h4 {
+      p {
         margin-left: unset;
       }
 

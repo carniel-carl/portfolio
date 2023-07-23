@@ -4,13 +4,13 @@ font-family: 'Figtree', sans-serif; */
 @import "./assets/styles/config";
 
 html {
-  background-color: var(--bg);
+  background: var(--bg);
   overflow-x: hidden;
   color: var(--txt-clr);
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--ff-cor);
+  font-family: var(--ff-fig);
   overflow: hidden;
 }

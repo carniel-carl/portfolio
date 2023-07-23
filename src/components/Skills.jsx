@@ -39,7 +39,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="skill-title">React</h3>
+          <p className="skill-title">React</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -51,7 +51,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="skill-title">Javascript</h3>
+          <p className="skill-title">Javascript</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -63,7 +63,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="skill-title">HTML/CSS</h3>
+          <p className="skill-title">HTML/CSS</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -75,7 +75,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="skill-title">Python</h3>
+          <p className="skill-title">Python</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -87,7 +87,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="skill-title">Version Control</h3>
+          <p className="skill-title">Version Control</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -99,7 +99,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="skill-title">GitHub</h3>
+          <p className="skill-title">GitHub</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -111,7 +111,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="skill-title">Responsive Design</h3>
+          <p className="skill-title">Responsive Design</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />

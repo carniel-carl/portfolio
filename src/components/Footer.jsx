@@ -35,7 +35,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <h3>all right reserved, Nmugha Chimezie &copy;{today}</h3>
+      <p>all right reserved, Nmugha Chimezie &copy;{today}</p>
     </footer>
   );
 };

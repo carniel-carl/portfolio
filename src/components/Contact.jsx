@@ -76,7 +76,7 @@ const Contact = () => {
           exit={{ x: "-100vw" }}
           transition={{ duration: 2 }}
         >
-          <h4>Hire me</h4>
+          <p>Hire me</p>
           <a href="/" className="btn">
             <span>Download resume</span>
             <HiDownload />
@@ -89,7 +89,7 @@ const Contact = () => {
           exit={{ x: "100vw" }}
           transition={{ duration: 2 }}
         >
-          <h4>Connect with me</h4>
+          <p>Connect with me</p>
           <form action="" className="project-form">
             <div className="input-area">
               <input type="text" name="name" required className="input" />

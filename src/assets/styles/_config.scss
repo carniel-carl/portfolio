@@ -9,11 +9,10 @@
 }
 
 :root {
-  --bg: #16151d;
+  --bg: #1b1b1b;
   --accent: #eb5e27;
-  --txt-clr: #818181;
-  --heading-clr: #dedede;
-  --bg-grad: linear-gradient(45deg, var(--bg) 0%, #252422 100%);
+  --txt-clr: #ababab;
+  --heading-clr: #e8e8e8;
   --ff-cor: "Cormorant Garamond", serif;
   --ff-fig: "Figtree", sans-serif;
   --fw-400: 400;
@@ -34,6 +33,13 @@ img {
   display: block;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-cor);
+}
+
 @mixin mobile {
   @media screen and (width < 599px) {
     @content;
@@ -52,8 +58,8 @@ img {
 }
 
 .btn-primary {
-  color: #faf9f6;
-  background-color: var(--accent);
+  color: white;
+  background: var(--accent);
   padding: 0.8rem 1.4rem;
   text-transform: uppercase;
   border-radius: 0.7rem;
@@ -79,5 +85,4 @@ img {
   --bg: #faf9f6;
   --txt-clr: #545454;
   --heading-clr: #222020;
-  --bg-grad: linear-gradient(45deg, var(--bg) 0%, var(--bg) 100%);
 }

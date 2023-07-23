@@ -141,7 +141,7 @@ const Project = () => {
               <SwiperSlide className="project" key={data.id}>
                 <div className="project__image"></div>
                 <div className="project__title">
-                  <h3>{data.name}</h3>
+                  <p>{data.name}</p>
                 </div>
               </SwiperSlide>
             );

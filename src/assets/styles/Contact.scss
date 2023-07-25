@@ -16,7 +16,6 @@
   .react-cont {
     position: absolute;
     max-width: 30vw;
-    // left: 5%;
     top: 25%;
     opacity: 0.15;
     z-index: -4;
@@ -55,8 +54,11 @@
     .email-container {
       display: flex;
       flex-direction: column;
+
       flex: 1;
       .project-form {
+        display: flex;
+        flex-direction: column;
         .input-area {
           position: relative;
           height: 4rem;
@@ -73,15 +75,15 @@
             outline: none;
             border: 1px solid var(--heading-clr);
             font-family: var(--ff-fig);
-            // transition: 0.5s ease;
             z-index: 3;
 
             &:focus ~ .label,
             &:valid ~ .label {
-              transform: translate(10px, -10px) scale(0.8);
+              transform: translate(5px, -10px) scale(0.9);
               opacity: 1;
               background-color: var(--bg);
               z-index: 6;
+              color: var(--accent);
             }
 
             &:-webkit-autofill {
@@ -118,8 +120,7 @@
         .submit {
           @extend .btn-sec;
           border-radius: 4rem;
-          margin-inline: 50%;
-          transform: translateX(-50%);
+          align-self: center;
           display: flex;
           align-items: center;
           gap: 0.5rem;

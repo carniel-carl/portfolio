@@ -15,7 +15,10 @@ const Navbar = () => {
     <header>
       <div className="logo">
         <a href="#">
-          <img src={logo} alt="logo" aria-hidden="true" />
+          {/* <img src={logo} alt="logo" aria-hidden="true" /> */}
+          <p className="logo__title">
+            Car<span>Niel</span>
+          </p>
         </a>
       </div>
       <div className="nav-dropdown">

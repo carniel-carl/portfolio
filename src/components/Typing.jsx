@@ -3,8 +3,7 @@ import useTyping from "../hooks/use-typing";
 
 import "./../assets/styles/Typing.scss";
 
-const titles = ["Nmugha Chimezie", "React Developer", "Frontend Developer"];
-const Typing = () => {
+const Typing = ({ titles }) => {
   const { typedValue, phases, text } = useTyping(titles);
 
   return (

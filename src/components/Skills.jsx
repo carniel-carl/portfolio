@@ -39,7 +39,7 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="skill-title">React</p>
+          <p className="skill-title">ReactJs</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -63,7 +63,31 @@ const Skills = () => {
           exit={{ y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="skill-title">HTML/CSS</p>
+          <p className="skill-title">HTML</p>
+          <div className="skill-dash"></div>
+          <div className="skill-arrow">
+            <img src={arrow} alt="arrow icon" aria-hidden="true" />
+          </div>
+        </motion.div>
+        <motion.div
+          className="skill"
+          variants={skillVariant}
+          exit={{ y: -50 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="skill-title">CSS/SCCS (BEM)</p>
+          <div className="skill-dash"></div>
+          <div className="skill-arrow">
+            <img src={arrow} alt="arrow icon" aria-hidden="true" />
+          </div>
+        </motion.div>
+        <motion.div
+          className="skill"
+          variants={skillVariant}
+          exit={{ y: -50 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="skill-title">Tailwind</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -93,18 +117,7 @@ const Skills = () => {
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
           </div>
         </motion.div>
-        <motion.div
-          className="skill"
-          variants={skillVariant}
-          exit={{ y: -50 }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="skill-title">GitHub</p>
-          <div className="skill-dash"></div>
-          <div className="skill-arrow">
-            <img src={arrow} alt="arrow icon" aria-hidden="true" />
-          </div>
-        </motion.div>
+
         <motion.div
           className="skill"
           variants={skillVariant}

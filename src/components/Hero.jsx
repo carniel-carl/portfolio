@@ -18,11 +18,48 @@ const upVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
+      delay: 5,
     },
   },
 };
 
-const titles = ["Nmugha Chimezie", "React Developer", "Frontend Developer"];
+const downVariant = {
+  offscreen: {
+    opacity: 0,
+    y: 60,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 150,
+      duration: 1.5,
+      delay: 7,
+    },
+  },
+};
+
+const slideVariant = {
+  offscreen: {
+    opacity: 0,
+    x: 100,
+  },
+  onscreen: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 150,
+      duration: 1.5,
+      delay: 6,
+    },
+  },
+};
+
+const titles = ["Nmugha Chimezie", "Carniel"];
+
+const bubble = Array.from({ length: 6 });
 
 const Hero = () => {
   // Background parallax
@@ -45,7 +82,7 @@ const Hero = () => {
     <motion.section
       id="hero"
       className="hero"
-      transition={{ staggerChildren: 0.8 }}
+      transition={{ staggerChildren: 0.5 }}
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.1 }}
@@ -55,15 +92,30 @@ const Hero = () => {
       </motion.div>
 
       <div className="hero-items">
-        <div className="hero-text" variants={upVariant}>
+        <div className="hero-text">
           <motion.h2 variants={upVariant}>Hi, I'm</motion.h2>
 
-          <a href="#about" className="name-span">
-            <Typing />
-          </a>
+          <motion.a href="#about" className="name-span" variants={slideVariant}>
+            <Typing titles={titles} />
+          </motion.a>
+
+          <motion.h2 variants={downVariant}>
+            I'm a Frontend{" "}
+            <span className="react">
+              <span aria-label="react">&lt; </span>
+              <em> React Developer </em>
+              <span aria-label="react">/&gt;</span>
+            </span>
+          </motion.h2>
         </div>
       </div>
       <div className="bg"></div>
+
+      <ul>
+        {bubble.map((_, i) => (
+          <li className="bubble" key={i}></li>
+        ))}
+      </ul>
     </motion.section>
   );
 };

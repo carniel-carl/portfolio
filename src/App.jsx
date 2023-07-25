@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatNav from "./components/FloatNav";
+import Loader from "./components/Loader";
 
 export const themeContext = createContext(null);
 
@@ -37,6 +38,7 @@ function App() {
     <AnimatePresence>
       <themeContext.Provider value={{ themeToggler, lightTheme }}>
         <main>
+          <Loader />
           <Hero />
           <div className="divider" />
           <div className="App">

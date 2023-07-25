@@ -14,7 +14,8 @@
   --txt-clr: #ababab;
   --heading-clr: #e8e8e8;
   --ff-cor: "Cormorant Garamond", serif;
-  --ff-fig: "Figtree", sans-serif;
+  // --ff-fig: "Figtree", sans-serif;
+  --ff-fig: Verdana, Geneva, Tahoma, sans-serif;
   --fw-400: 400;
   --fw-700: 700;
 }
@@ -67,6 +68,13 @@ h4 {
   font-weight: var(--fw-400);
   border: none;
   cursor: pointer;
+  transition: all 0.8s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem 0.25rem var(--accent);
+    text-shadow: 0 0 0.1rem white;
+  }
 }
 
 .btn-sec {
@@ -79,10 +87,15 @@ h4 {
   font-weight: var(--fw-400);
   border: 0.1rem solid var(--accent);
   cursor: pointer;
+  transition: all 0.8s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .light {
-  --bg: #faf9f6;
+  --bg: #f6f6f6;
   --txt-clr: #545454;
   --heading-clr: #222020;
 }

@@ -1,68 +1,26 @@
-import React from "react";
-import "./../assets/styles/About.scss";
+import React, { useMemo } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-import { motion } from "framer-motion";
+import "./../assets/styles/About.scss";
 
 import profile from "./../assets/images/profile-pic.jpg";
 
-const textVariant = {
-  offscreen: {
-    opacity: 0,
-    x: "100vw",
-  },
-  onscreen: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "tween",
-      duration: 1,
-    },
-  },
-};
-const imageVariant = {
-  offscreen: {
-    opacity: 0,
-    x: "-100vw",
-  },
-  onscreen: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      duration: 1.5,
-    },
-  },
-};
-
 const About = () => {
+  useMemo(() => {
+    Aos.init({ duration: 800 });
+  }, []);
   return (
-    <motion.section
-      id="about"
-      className="about"
-      transition={{ staggerChildren: 0.4 }}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.35 }}
-    >
-      <motion.div
-        className="image-container"
-        variants={imageVariant}
-        exit={{ x: "-100vw" }}
-        transition={{ duration: 2 }}
-      >
+    <section id="about" className="about">
+      <div className="image-container" data-aos="fade-right">
         <div className="image">
           <img src={profile} alt="profile pic" />
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        className="text-container"
-        variants={textVariant}
-        exit={{ x: "100vw" }}
-        transition={{ duration: 2 }}
-      >
-        <h2>About me</h2>
-        <p>
+      <div className="text-container">
+        <h2 data-aos="fade-left">About</h2>
+        <p data-aos="fade-left">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
           suscipit, rem numquam exercitationem dolorum obcaecati cum ipsum,
           tempora, consectetur nulla fuga ea quia fugit expedita culpa libero.
@@ -73,8 +31,8 @@ const About = () => {
         </p>
 
         <a href="#projects">View Projects</a>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./../assets/styles/Loader.scss";
 
 const Loader = () => {
@@ -8,7 +8,7 @@ const Loader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       ref.current.className = "loader open";
-    }, 1500);
+    }, 1000);
 
     return () => {
       clearTimeout(timer);

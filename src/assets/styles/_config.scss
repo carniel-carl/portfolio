@@ -11,13 +11,15 @@
 :root {
   --bg: #1b1b1b;
   --accent: #eb5e27;
+  // --accent: #1f9e71;
   --txt-clr: #ababab;
   --heading-clr: #e8e8e8;
   --ff-cor: "Cormorant Garamond", serif;
-  // --ff-fig: "Figtree", sans-serif;
   --ff-fig: Verdana, Geneva, Tahoma, sans-serif;
   --fw-400: 400;
   --fw-700: 700;
+  --gradient: rgba(0, 0, 0, 0.5);
+  --gradient2: rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -32,13 +34,6 @@ ul {
 img {
   width: 100%;
   display: block;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--ff-cor);
 }
 
 @mixin mobile {
@@ -94,8 +89,49 @@ h4 {
   }
 }
 
+.heading-style {
+  text-transform: uppercase;
+  width: fit-content;
+  font-size: clamp(2.5rem, 7vw, 9rem);
+  white-space: nowrap;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: var(--gradient2);
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: var(--accent);
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::after {
+    position: absolute;
+    width: 20%;
+    height: 5px;
+    font-size: 1.5rem;
+    top: 40%;
+    left: 70%;
+    color: var(--accent);
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    transform: translateX(-50%);
+    -webkit-text-fill-color: var(--heading-clr);
+    -webkit-text-stroke-width: unset;
+    -webkit-text-stroke-color: var(--heading-clr);
+  }
+}
+
 .light {
   --bg: #f6f6f6;
   --txt-clr: #545454;
   --heading-clr: #222020;
+  --gradient: rgba(255, 255, 255, 0.5);
+  --gradient2: rgba(0, 0, 0, 0.3);
 }

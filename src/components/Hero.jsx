@@ -18,7 +18,7 @@ const upVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
-      delay: 5,
+      delay: 3,
     },
   },
 };
@@ -35,7 +35,7 @@ const downVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
-      delay: 7,
+      delay: 5,
     },
   },
 };
@@ -52,7 +52,7 @@ const slideVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
-      delay: 6,
+      delay: 4,
     },
   },
 };

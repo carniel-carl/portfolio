@@ -4,7 +4,6 @@ import "./../assets/styles/Footer.scss";
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
-import { AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   let today = new Date().getFullYear();
@@ -26,11 +25,6 @@ const Footer = () => {
           <li>
             <a href="/">
               <BsTwitter />
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <AiFillInstagram />
             </a>
           </li>
         </ul>

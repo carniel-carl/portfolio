@@ -18,9 +18,10 @@
     gap: 1.5rem;
 
     h2 {
-      text-transform: uppercase;
-      color: var(--heading-clr);
-      font-size: clamp(2.5rem, 6vw, 8rem);
+      @extend .heading-style;
+      &::after {
+        content: "get to know me";
+      }
     }
 
     p {

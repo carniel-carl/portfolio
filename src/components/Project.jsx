@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
-
-import { motion } from "framer-motion";
+import React, { useMemo } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -55,60 +55,16 @@ const datas = [
   },
 ];
 
-const upVariant = {
-  offscreen: {
-    opacity: 0,
-    y: -50,
-  },
-  onscreen: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "tween",
-      duration: 1,
-    },
-  },
-};
-
-const slideVariant = {
-  offscreen: {
-    opacity: 0,
-    x: "100vw",
-  },
-  onscreen: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "tween",
-      duration: 1,
-    },
-  },
-};
-
 const Project = () => {
+  useMemo(() => {
+    Aos.init({ duration: 800 });
+  }, []);
   return (
-    <motion.section
-      id="projects"
-      className="projects"
-      transition={{ staggerChildren: 0.8 }}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.35 }}
-    >
-      <motion.h2
-        className="projects__heading"
-        variants={upVariant}
-        exit={{ y: -50 }}
-        transition={{ duration: 0.5 }}
-      >
-        Check out some of my exciting projects
-      </motion.h2>
-      <motion.div
-        className="carousel"
-        variants={slideVariant}
-        exit={{ x: "100vw" }}
-        transition={{ duration: 0.8 }}
-      >
+    <section id="projects" className="projects">
+      <h2 className="projects__heading" data-aos="fade-left">
+        Projects
+      </h2>
+      <div className="carousel" data-aos="zoom-in">
         <Swiper
           slidesPerView={2}
           spaceBetween={35}
@@ -158,8 +114,8 @@ const Project = () => {
             <div className="slider-pagination"></div>
           </div>
         </Swiper>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };
 

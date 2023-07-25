@@ -1,16 +1,20 @@
 @import "./config";
 
 .contact {
-  padding-block: 12vh;
+  padding-block: 5vh;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
   h2 {
-    color: var(--heading-clr);
     margin-inline: auto;
     margin-bottom: 2vw;
+    @extend .heading-style;
+
+    &::after {
+      content: "Reach out to me";
+    }
   }
 
   .react-cont {

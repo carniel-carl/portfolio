@@ -1,16 +1,19 @@
 @import "./config";
 
 .skill-container {
-  padding-block: 10vh;
+  padding-block: 5vh;
   max-width: 80vw;
   margin-inline: auto;
   color: var(--heading-clr);
   position: relative;
 
   h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    text-align: center;
+    margin-inline: auto;
+    margin-bottom: 5rem;
+    @extend .heading-style;
+    &::after {
+      content: "acquired tech skills";
+    }
   }
 
   .skills {
@@ -34,15 +37,6 @@
     }
   }
 
-  .heart {
-    position: absolute;
-    width: 8vw;
-    top: 10%;
-    right: 25%;
-    z-index: -4;
-    opacity: 0.3;
-  }
-
   @include mobile {
     padding-block: 5vh;
 
@@ -61,10 +55,5 @@
 
   @include tablet {
     padding-block: 8vh;
-    .heart {
-      width: 10vw;
-      top: 20%;
-      right: 15%;
-    }
   }
 }

@@ -1,14 +1,17 @@
 @import "./config";
 
 .projects {
-  padding-block: 12vh;
+  padding-block: 5vh;
   text-align: center;
   position: relative;
 
   &__heading {
-    color: var(--heading-clr);
-    font-size: 2rem;
-    margin-bottom: 3.5rem;
+    width: fit-content;
+    margin-inline: auto;
+    @extend .heading-style;
+    &::after {
+      content: "explore my works";
+    }
   }
 
   .carousel {

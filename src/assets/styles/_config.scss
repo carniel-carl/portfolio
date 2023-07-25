@@ -92,7 +92,7 @@ img {
 .heading-style {
   text-transform: uppercase;
   width: fit-content;
-  font-size: clamp(2.5rem, 7vw, 9rem);
+  font-size: clamp(2.5rem, 13vw, 8rem);
   white-space: nowrap;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1.5px;
@@ -103,12 +103,19 @@ img {
   &::before {
     content: "";
     position: absolute;
-    width: 60%;
+    width: 40%;
     height: 3px;
     background-color: var(--accent);
     bottom: -5%;
     left: 50%;
     transform: translateX(-50%);
+
+    @include mobile {
+      width: 100%;
+      left: 0;
+      transform: translateX(-30%);
+      bottom: -30%;
+    }
   }
 
   &::after {
@@ -125,6 +132,16 @@ img {
     -webkit-text-fill-color: var(--heading-clr);
     -webkit-text-stroke-width: unset;
     -webkit-text-stroke-color: var(--heading-clr);
+
+    @include tablet {
+      font-size: 1.3rem;
+      left: 50%;
+    }
+    @include mobile {
+      font-size: 0.89rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 

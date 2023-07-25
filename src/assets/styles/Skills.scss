@@ -40,16 +40,14 @@
   @include mobile {
     padding-block: 5vh;
 
+    h2 {
+      margin-inline: unset;
+    }
+
     .skill {
       &-arrow {
         width: 1.4rem;
       }
-    }
-
-    .heart {
-      width: 15vw;
-      top: 20%;
-      right: 15%;
     }
   }
 

@@ -148,6 +148,11 @@
     align-items: center;
     text-align: center;
 
+    h2 {
+      margin-inline: unset;
+      align-self: flex-start;
+    }
+
     .react-cont {
       max-width: 60vw;
     }

@@ -128,13 +128,14 @@
   }
 
   @include tablet {
-    height: 60vh;
+    height: 80vh;
     gap: 20vh;
     padding-inline: 8.5vw;
 
     .bg {
-      background-size: 65%;
-      background-position-x: 140%;
+      width: 55%;
+      background-size: 85%;
+      background-position-x: 250%;
     }
 
     .hero-items {

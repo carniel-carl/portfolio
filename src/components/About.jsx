@@ -19,7 +19,7 @@ const About = () => {
       </div>
 
       <div className="text-container">
-        <h2 data-aos="fade-left">About</h2>
+        <h2 data-aos="fade-up">About</h2>
         <p data-aos="fade-left">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
           suscipit, rem numquam exercitationem dolorum obcaecati cum ipsum,

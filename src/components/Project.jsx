@@ -61,7 +61,7 @@ const Project = () => {
   }, []);
   return (
     <section id="projects" className="projects">
-      <h2 className="projects__heading" data-aos="fade-left">
+      <h2 className="projects__heading" data-aos="fade-up">
         Projects
       </h2>
       <div className="carousel" data-aos="zoom-in">

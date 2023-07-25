@@ -7,7 +7,9 @@
 
   &__heading {
     width: fit-content;
+    margin-bottom: 5rem;
     margin-inline: auto;
+
     @extend .heading-style;
     &::after {
       content: "explore my works";
@@ -92,7 +94,8 @@
     padding-block: 4vh;
 
     &__heading {
-      margin-bottom: 0.5rem;
+      margin-bottom: 3.5rem;
+      margin-inline: unset;
     }
 
     .carousel {

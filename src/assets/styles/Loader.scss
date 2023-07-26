@@ -1,17 +1,15 @@
 @import "./config";
 
-.loader {
+.load {
   width: 100%;
-  max-height: 100vh;
+  height: 100%;
   position: fixed;
   inset: 0;
   z-index: 100;
-  overflow: hidden;
+  overflow-y: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  isolation: isolate;
-  transition: all 1s;
 
   &.open {
     visibility: hidden;
@@ -23,8 +21,9 @@
     width: 50vw;
     height: 100%;
     background: rgb(20, 20, 20);
+    border: 0px solid var(--accent);
     position: absolute;
-    transition: all 2s 1s ease-in-out;
+    transition: all 2s ease-in-out;
     z-index: -90;
   }
 
@@ -36,10 +35,105 @@
   }
 
   &.open::before {
-    transform: translateX(-120vw) skewX(-35deg);
+    animation: open 3s forwards;
+    --deg: -400vw;
   }
 
   &.open::after {
-    transform: translateX(120vw) skewX(-35deg);
+    animation: open 3s forwards;
+    --deg: 400vw;
+  }
+
+  @keyframes open {
+    0% {
+      border-width: 0px;
+    }
+
+    100% {
+      transform: translateX(var(--deg)) skewX(-75deg) scale(2);
+      border-width: 15rem;
+    }
+  }
+
+  .loader {
+    width: 100px;
+    height: 100px;
+    position: relative;
+
+    & > * {
+      width: 10px;
+      height: 10px;
+      border-radius: 20px;
+      position: absolute;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        position: absolute;
+        right: 0;
+        animation: loading-1 1.1s infinite;
+        background: var(--accent);
+      }
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+        transform: rotate(70deg);
+
+        &::before {
+          // background: #06aed5;
+          // background: #ebebeb;
+        }
+      }
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+        transform: rotate(160deg);
+
+        &::before {
+          // background: #ec008c;
+          // background: #ebebeb;
+        }
+      }
+      &:nth-child(3) {
+        bottom: 0;
+        right: 0;
+        transform: rotate(-110deg);
+
+        &::before {
+          // background: #ffbf00;
+          // background: #ebebeb;
+        }
+      }
+      &:nth-child(4) {
+        bottom: 0;
+        left: 0;
+        transform: rotate(-20deg);
+
+        &::before {
+          // background: #079c00;
+          // background: #ebebeb;
+        }
+      }
+    }
+  }
+
+  @keyframes loading-1 {
+    0% {
+      width: 20px;
+      right: 0;
+    }
+
+    30% {
+      width: 120px;
+      right: -100px;
+    }
+
+    60% {
+      width: 20px;
+      right: -100px;
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 .type {
   &::after {
-    content: " |";
+    content: "|";
     color: var(--accent);
   }
 

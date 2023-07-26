@@ -16,6 +16,7 @@ export const themeContext = createContext(null);
 function App() {
   const theme = JSON.parse(localStorage.getItem("lightTheme"));
   const [lightTheme, setLightTheme] = useState(theme);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const page = document.querySelector("html");
@@ -34,30 +35,43 @@ function App() {
     localStorage.setItem("lightTheme", !lightTheme);
   };
 
+  // TIMER FOR CLEARING OUT THE LOADING SCREEN
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <AnimatePresence>
       <themeContext.Provider value={{ themeToggler, lightTheme }}>
-        <main>
-          <Loader />
-          <Hero />
-          <div className="divider" />
-          <div className="App">
-            <About />
-
+        <Loader open={open} />
+        {open && (
+          <main>
+            <Hero />
             <div className="divider" />
+            <div className="App">
+              <About />
 
-            <Project />
-            <div className="divider" />
+              <div className="divider" />
 
-            <Skills />
-            <div className="divider" />
+              <Project />
+              <div className="divider" />
 
-            <Contact />
-            <div className="divider" />
-            <Footer />
-            <FloatNav />
-          </div>
-        </main>
+              <Skills />
+              <div className="divider" />
+
+              <Contact />
+              <div className="divider" />
+              <Footer />
+              <FloatNav />
+            </div>
+          </main>
+        )}
       </themeContext.Provider>
     </AnimatePresence>
   );

@@ -18,7 +18,6 @@ const upVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
-      delay: 3,
     },
   },
 };
@@ -35,7 +34,6 @@ const downVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
-      delay: 5,
     },
   },
 };
@@ -52,17 +50,16 @@ const slideVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
-      delay: 4,
     },
   },
 };
 
-const titles = ["Nmugha Chimezie", "Carniel"];
+const titles = ["Nmugha Chimezie.", "Carniel."];
 
 const bubble = Array.from({ length: 6 });
 
 const Hero = () => {
-  // Background parallax
+  // BACKGROUND PARALLAX
   useEffect(() => {
     const parallax = document.querySelector(".bg");
 
@@ -82,7 +79,7 @@ const Hero = () => {
     <motion.section
       id="hero"
       className="hero"
-      transition={{ staggerChildren: 0.5 }}
+      transition={{ staggerChildren: 0.9 }}
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.1 }}

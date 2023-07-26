@@ -5,12 +5,12 @@ font-family: 'Figtree', sans-serif; */
 
 html {
   background: var(--bg);
-  overflow-x: hidden;
   color: var(--txt-clr);
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--ff-fig);
-  overflow: hidden;
+  overflow-x: hidden;
 }

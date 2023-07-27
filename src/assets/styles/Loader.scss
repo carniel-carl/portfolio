@@ -35,12 +35,12 @@
   }
 
   &.open::before {
-    animation: open 3s forwards;
+    animation: open 9s forwards;
     --deg: -400vw;
   }
 
   &.open::after {
-    animation: open 3s forwards;
+    animation: open 9s forwards;
     --deg: 400vw;
   }
 

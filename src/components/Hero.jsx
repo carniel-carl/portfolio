@@ -18,6 +18,7 @@ const upVariant = {
       type: "spring",
       stiffness: 150,
       duration: 1.5,
+      delay: 1,
     },
   },
 };

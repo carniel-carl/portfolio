@@ -4,10 +4,10 @@ font-family: 'Figtree', sans-serif; */
 @import "./assets/styles/config";
 
 html {
-  background: var(--bg);
-  color: var(--txt-clr);
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  color: var(--txt-clr);
+  background: var(--bg);
 }
 
 body {

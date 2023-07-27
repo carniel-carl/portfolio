@@ -32,16 +32,57 @@
       place-content: center;
       transition: all 0.6s;
       transform: scale(1);
+      position: relative;
 
       &:hover {
         transform: scale(1.2);
         color: lighten(#b6b6b6, $amount: 50%);
+
+        & .tooltip {
+          visibility: visible;
+          left: 100%;
+        }
       }
 
       &.active {
         background: var(--accent);
         transform: scale(1.15);
         color: lighten(#b6b6b6, $amount: 50%);
+      }
+
+      & .tooltip {
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        padding: 0.4rem 1.5rem;
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: var(--bg);
+        background: var(--heading-clr);
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        visibility: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 8px solid transparent;
+          border-right: 13px solid var(--heading-clr);
+          border-bottom: 8px solid transparent;
+          right: 98%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        @include tablet {
+          display: none;
+        }
+        @include mobile {
+          display: none;
+        }
       }
     }
   }

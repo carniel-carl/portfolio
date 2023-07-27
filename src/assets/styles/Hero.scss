@@ -30,6 +30,7 @@
     background: lighten($color: #676767, $amount: 0.8);
     z-index: -5;
     animation: animate 20s linear infinite;
+    bottom: -20%;
 
     &:nth-child(1) {
       left: 86vw;
@@ -81,7 +82,7 @@
     }
 
     100% {
-      transform: translateY(-110vh) rotate(360deg) scale(1.2);
+      transform: translateY(-110vh) rotate(360deg) scale(1.4);
       opacity: 0;
     }
   }

@@ -6,6 +6,7 @@ import { FaTools } from "react-icons/fa";
 import { BsChatDotsFill } from "react-icons/bs";
 import { GoPersonFill } from "react-icons/go";
 import { MdWork } from "react-icons/md";
+import Contact from "./Contact";
 
 const FloatNav = () => {
   const [showFloatNav, setShowFloatNav] = useState(false);
@@ -69,6 +70,8 @@ const FloatNav = () => {
           }}
         >
           <FaHome />
+
+          <span className="tooltip">home</span>
         </a>
         <a
           href="#about"
@@ -77,6 +80,7 @@ const FloatNav = () => {
           }}
         >
           <GoPersonFill />
+          <span className="tooltip">about</span>
         </a>
         <a
           href="#projects"
@@ -85,6 +89,7 @@ const FloatNav = () => {
           }}
         >
           <MdWork />
+          <span className="tooltip">projects</span>
         </a>
         <a
           href="#skill"
@@ -93,6 +98,7 @@ const FloatNav = () => {
           }}
         >
           <FaTools />
+          <span className="tooltip">skills</span>
         </a>
         <a
           href="#contact"
@@ -101,6 +107,7 @@ const FloatNav = () => {
           }}
         >
           <BsChatDotsFill />
+          <span className="tooltip">Contact</span>
         </a>
       </div>
     </nav>

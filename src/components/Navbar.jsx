@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import iro from "@jaames/iro";
 
 import "./../assets/styles/Navbar.scss";
@@ -10,28 +10,60 @@ import { IoColorPaletteSharp } from "react-icons/io5";
 import { themeContext } from "../App";
 
 const Navbar = () => {
-  const { themeToggler, lightTheme } = useContext(themeContext);
+  const { themeToggler, lightTheme, accent } = useContext(themeContext);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const dropdownRef = useRef(null);
+
+  //  FOR CLOSING THE DROPDOWN WHEN THE BODY IS CLICKED
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (!dropdownRef.current.contains(e.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
+  //  FOR SHOWING THE COLOR WHEEL AND SETTING VALUE
   useEffect(() => {
     const picker = document.getElementById("picker");
     const colorPicker = new iro.ColorPicker(picker, {
       width: 200,
       color: "#eb5e27",
       wheelLightness: false,
+      sliderSize: 10,
+      handleRadius: 10,
     });
 
     colorPicker.on("color:change", (color) => {
+      if (color.saturation < 20) {
+        color.saturation = 20;
+      }
+
+      if (color.value < 30) {
+        color.value = 30;
+      }
+
       const value = color.hexString;
       document.documentElement.style.setProperty("--accent", value);
+      const accentValue = value.substring(1);
+      localStorage.setItem("accent", value);
     });
   }, []);
 
+  //  TO PREVENT SCROLLING WHEN DROPDOWN IS VISIBLE
   useEffect(() => {
     showDropdown
-      ? (document.body.style.overflowY = "hidden")
-      : (document.body.style.overflowY = "auto");
-  }, []);
+      ? document.body.classList.add("hidden")
+      : document.body.classList.remove("hidden");
+  });
 
   return (
     <header>
@@ -61,7 +93,7 @@ const Navbar = () => {
         </nav>
       </div>
 
-      <div className="toggle">
+      <div className="toggle" ref={dropdownRef}>
         <IoColorPaletteSharp
           className="theme-icon"
           onClick={() => setShowDropdown((prev) => !prev)}

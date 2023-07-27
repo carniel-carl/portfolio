@@ -28,30 +28,32 @@ const Contact = () => {
 
         <div className="email-container" data-aos="fade-left">
           <p>Connect with me</p>
-          <form action="" className="project-form">
-            <div className="input-area">
-              <input type="text" name="name" required className="input" />
-              <span className="label">Name</span>
-            </div>
-            <div className="input-area">
-              <input type="text" name="email" required className="input" />
-              <span className="label">Email</span>
-            </div>
-            <div className="input-area textarea">
-              <textarea
-                type="textarea"
-                name="project"
-                required
-                className="input"
-              />
-              <span className="label">Project</span>
-            </div>
+          <div className="project-form">
+            <form action="">
+              <div className="input-area">
+                <input type="text" name="name" required className="input" />
+                <span className="label">Name</span>
+              </div>
+              <div className="input-area">
+                <input type="text" name="email" required className="input" />
+                <span className="label">Email</span>
+              </div>
+              <div className="input-area textarea">
+                <textarea
+                  type="textarea"
+                  name="project"
+                  required
+                  className="input"
+                />
+                <span className="label">Project</span>
+              </div>
 
-            <button className="submit">
-              <span>Send</span>
-              <BiSend />
-            </button>
-          </form>
+              <button className="submit">
+                <span>Send</span>
+                <BiSend />
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 

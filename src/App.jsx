@@ -18,6 +18,8 @@ function App() {
   const [lightTheme, setLightTheme] = useState(theme);
   const [open, setOpen] = useState(false);
 
+  const accent = localStorage.getItem("accent" || "#eb5e27");
+
   useEffect(() => {
     const page = document.querySelector("html");
 
@@ -37,6 +39,7 @@ function App() {
 
   // TIMER FOR CLEARING OUT THE LOADING SCREEN
   useEffect(() => {
+    document.documentElement.style.setProperty("--accent", accent);
     const timer = setTimeout(() => {
       setOpen(true);
     }, 3000);

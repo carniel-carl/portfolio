@@ -154,7 +154,7 @@
 
   @include mobile {
     grid-template-columns: 1fr;
-    height: 100vh;
+    // height: 100vh;
     gap: 30vh;
     padding-inline: 6vw;
 
@@ -179,16 +179,4 @@
       }
     }
   }
-
-  // @include wide_screen {
-  //     h1 {
-  //         font-size: min(4.5rem, 9vw);
-  //         line-height: 1.5;
-
-  //         .name-span{
-  //             font-size: min(10rem, 16vw);
-  //         }
-  //     }
-
-  // }
 }

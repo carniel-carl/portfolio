@@ -1,9 +1,11 @@
 import React from "react";
+
 import "./../assets/styles/Footer.scss";
 
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
+import { socialLinks as links } from "../data/link-data";
 
 const Footer = () => {
   let today = new Date().getFullYear();
@@ -13,17 +15,17 @@ const Footer = () => {
       <div className="icons">
         <ul>
           <li>
-            <a href="/">
+            <a href={links.linkedin} target="_blank" rel="noreferrer">
               <BsLinkedin />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href={links.github} target="_blank" rel="noreferrer">
               <BsGithub />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href={links.twitter} target="_blank" rel="noreferrer">
               <BsTwitter />
             </a>
           </li>

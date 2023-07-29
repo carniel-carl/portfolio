@@ -60,7 +60,7 @@ const Project = () => {
     Aos.init({ duration: 800 });
   }, []);
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="projects home">
       <h2 className="projects__heading" data-aos="fade-up">
         Projects
       </h2>

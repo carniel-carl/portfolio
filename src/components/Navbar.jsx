@@ -6,6 +6,7 @@ import "./../assets/styles/Navbar.scss";
 import { BsFillSunFill } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
 import { IoColorPaletteSharp } from "react-icons/io5";
+import { AiOutlineClose } from "react-icons/ai";
 
 import { themeContext } from "../App";
 
@@ -16,7 +17,6 @@ const Navbar = () => {
   const dropdownRef = useRef(null);
 
   //  FOR CLOSING THE DROPDOWN WHEN THE BODY IS CLICKED
-
   useEffect(() => {
     const handler = (e) => {
       if (!dropdownRef.current.contains(e.target)) {
@@ -29,17 +29,30 @@ const Navbar = () => {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  }, []);
 
   //  FOR SHOWING THE COLOR WHEEL AND SETTING VALUE
   useEffect(() => {
     const picker = document.getElementById("picker");
     const colorPicker = new iro.ColorPicker(picker, {
-      width: 200,
-      color: "#eb5e27",
+      width: 220,
+      color: accent,
       wheelLightness: false,
-      sliderSize: 10,
-      handleRadius: 10,
+      sliderSize: 20,
+      handleRadius: 12,
+
+      layout: [
+        {
+          component: iro.ui.Box,
+          options: {},
+        },
+        {
+          component: iro.ui.Slider,
+          options: {
+            sliderType: "hue",
+          },
+        },
+      ],
     });
 
     colorPicker.on("color:change", (color) => {
@@ -53,7 +66,6 @@ const Navbar = () => {
 
       const value = color.hexString;
       document.documentElement.style.setProperty("--accent", value);
-      const accentValue = value.substring(1);
       localStorage.setItem("accent", value);
     });
   }, []);
@@ -63,12 +75,12 @@ const Navbar = () => {
     showDropdown
       ? document.body.classList.add("hidden")
       : document.body.classList.remove("hidden");
-  });
+  }, [showDropdown]);
 
   return (
     <header>
       <div className="logo">
-        <a href="#">
+        <a href="/">
           <p className="logo__title">
             Car<span>Niel</span>
           </p>
@@ -94,10 +106,12 @@ const Navbar = () => {
       </div>
 
       <div className="toggle" ref={dropdownRef}>
-        <IoColorPaletteSharp
+        <div
           className="theme-icon"
           onClick={() => setShowDropdown((prev) => !prev)}
-        />
+        >
+          {showDropdown ? <AiOutlineClose /> : <IoColorPaletteSharp />}
+        </div>
 
         <div className={`color-picker ${showDropdown ? "show-dropdown" : ""}`}>
           <div id="picker" className="picker"></div>

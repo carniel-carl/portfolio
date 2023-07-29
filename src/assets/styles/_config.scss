@@ -42,7 +42,7 @@ img {
 }
 
 @mixin tablet {
-  @media screen and (width > 600px) and (width < 1199px) {
+  @media screen and (width < 1199px) {
     @content;
   }
 }
@@ -145,9 +145,10 @@ img {
 }
 
 .light {
-  --bg: #f6f6f6;
-  --txt-clr: #545454;
-  --heading-clr: #222020;
+  // --bg: #f6f6f6;
+  --bg: #faf9f6;
+  --txt-clr: #373737;
+  --heading-clr: #171616;
   --gradient: rgba(255, 255, 255, 0.5);
   --gradient2: rgba(0, 0, 0, 0.3);
 }

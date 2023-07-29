@@ -79,7 +79,7 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="hero"
+      className="hero home"
       transition={{ staggerChildren: 0.9 }}
       initial="offscreen"
       whileInView="onscreen"

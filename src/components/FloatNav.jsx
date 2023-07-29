@@ -1,17 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+
 import "./../assets/styles/FloatNav.scss";
+
+import { navLinksData } from "../data/link-data";
 
 import { FaHome } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { BsChatDotsFill } from "react-icons/bs";
 import { GoPersonFill } from "react-icons/go";
 import { MdWork } from "react-icons/md";
-import Contact from "./Contact";
 
 const FloatNav = () => {
   const [showFloatNav, setShowFloatNav] = useState(false);
 
-  const [active, setActive] = useState("#");
+  useEffect(() => {
+    const navlink = document.querySelector(".float-nav li");
+    navlink.classList.add("active");
+  }, []);
 
   // TIMER FOR SHOWING FLOATING NAVIGATION
   useEffect(() => {
@@ -23,7 +28,7 @@ const FloatNav = () => {
 
       timeoutid = setTimeout(() => {
         setShowFloatNav(true);
-      }, 1000);
+      }, 800);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,13 +41,14 @@ const FloatNav = () => {
 
   // SETTING THE ACTIVE NAV LINK BASED ON SCROLLED POSITION
   useEffect(() => {
-    const navlinks = document.querySelectorAll(".float-nav a");
-    const sections = document.querySelectorAll("section");
+    const home = navLinksData.id;
+    const navlinks = document.querySelectorAll(".float-nav li");
+    const sections = document.querySelectorAll(home);
 
-    window.addEventListener("scroll", () => {
+    const inview = () => {
       const currentPosition = window.scrollY;
 
-      sections.forEach((section, index) => {
+      sections?.forEach((section, index) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
 
@@ -53,65 +59,55 @@ const FloatNav = () => {
           navlinks.forEach((link) => {
             link.classList.remove("active");
           });
-          navlinks[index].classList.add("active");
+          navlinks[index]?.classList.add("active");
         }
       });
-    });
+    };
+    window.addEventListener("scroll", inview);
+
+    return () => {
+      window.removeEventListener("scroll", inview);
+    };
   }, []);
+
+  const scrollToSection = (elementRef) => {
+    if (elementRef === "#") {
+      window.scrollTo({
+        top: 0,
+      });
+
+      return;
+    }
+    const section = document.querySelector(elementRef);
+    window.scrollTo({
+      top: section?.offsetTop,
+    });
+  };
 
   return (
     <nav className={`float-nav ${showFloatNav ? "show" : ""}`}>
-      <div className="icons">
-        <a
-          href="#"
-          className="active"
-          onClick={() => {
-            setActive("#");
-          }}
-        >
-          <FaHome />
+      <div className="navigation">
+        <ul className="icons">
+          {navLinksData.links.map((data, id) => (
+            <li key={id}>
+              <div
+                className="navigate"
+                onClick={() => scrollToSection(data.to)}
+              >
+                <span className="icon">
+                  <data.icon />
+                </span>
 
-          <span className="tooltip">home</span>
-        </a>
-        <a
-          href="#about"
-          onClick={() => {
-            setActive("#about");
-          }}
-        >
-          <GoPersonFill />
-          <span className="tooltip">about</span>
-        </a>
-        <a
-          href="#projects"
-          onClick={() => {
-            setActive("#projects");
-          }}
-        >
-          <MdWork />
-          <span className="tooltip">projects</span>
-        </a>
-        <a
-          href="#skill"
-          onClick={() => {
-            setActive("#skill");
-          }}
-        >
-          <FaTools />
-          <span className="tooltip">skills</span>
-        </a>
-        <a
-          href="#contact"
-          onClick={() => {
-            setActive("#contact");
-          }}
-        >
-          <BsChatDotsFill />
-          <span className="tooltip">Contact</span>
-        </a>
+                <span className="tooltip">{data.title}</span>
+              </div>
+            </li>
+          ))}
+
+          <div className="indicator"></div>
+        </ul>
       </div>
     </nav>
   );
 };
 
-export default FloatNav;
+export default React.memo(FloatNav);

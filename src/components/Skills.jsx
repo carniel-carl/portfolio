@@ -12,7 +12,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skill" className="skill-container">
+    <section id="skill" className="skill-container home">
       <h2 data-aos="fade-up">Skills</h2>
       <div className="skills">
         <div className="skill" data-aos="fade-up">

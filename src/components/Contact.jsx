@@ -14,7 +14,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact home">
       <h2 data-aos="fade-up">contact</h2>
 
       <div className="connect">

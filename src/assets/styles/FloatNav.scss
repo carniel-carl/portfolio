@@ -2,127 +2,237 @@
 
 .float-nav {
   position: fixed;
-  bottom: 60vh;
-  left: 2vw;
-  width: 7vw;
+  bottom: 30%;
+  left: 2%;
   height: auto;
-  transform: translateY(50%);
-  background: rgba(56, 56, 56, 0.53);
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  padding: 1rem;
-  border-radius: 3rem;
-  backdrop-filter: blur(0.1rem);
+  transition: bottom 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   z-index: 10;
 
-  .icons {
+  .navigation {
+    width: 100%;
+    height: 100%;
+    padding-block: 3rem;
+    padding-inline: 0.7rem;
+    border: 0.44rem solid var(--bg);
+    border-radius: 4rem;
+    background: rgba(56, 56, 56, 0.5);
+    backdrop-filter: blur(0.3rem);
     display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
 
-    a {
-      color: #b6b6b6;
-      font-size: 2rem;
-      padding: 0.3em;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50px;
-      display: grid;
-      place-content: center;
-      transition: all 0.6s;
-      transform: scale(1);
+    .icons {
+      width: fit-content;
+      height: fit-content;
       position: relative;
 
-      &:hover {
-        transform: scale(1.2);
-        color: lighten(#b6b6b6, $amount: 50%);
+      li {
+        height: 4.5rem;
+        width: 5.4rem;
+        position: relative;
 
-        & .tooltip {
-          visibility: visible;
-          left: 100%;
+        & .navigate {
+          height: 100%;
+          position: relative;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
+
+          & .icon {
+            font-size: 2.5rem;
+            position: relative;
+            color: #e1e1e1;
+            display: block;
+            text-align: center;
+            transition: transform 0.5s ease-in-out;
+
+            &:hover {
+              transform: scale(1.2);
+              color: lighten($color: #e1e1e1, $amount: 100%);
+            }
+          }
+
+          & .tooltip {
+            font-size: 1rem;
+            position: absolute;
+            letter-spacing: 0.1em;
+            text-transform: capitalize;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            transform: translateX(-100%);
+          }
+        }
+
+        &.active {
+          & .navigate {
+            & .icon {
+              transform: translateX(130%) scale(0.7);
+            }
+
+            & .tooltip {
+              opacity: 1;
+              transform: translateX(-20%) scale(0.85);
+            }
+          }
+        }
+
+        &:nth-child(1).active ~ .indicator {
+          transform: translateY(4.5rem * 0);
+        }
+        &:nth-child(2).active ~ .indicator {
+          transform: translateY(4.5rem * 1);
+        }
+        &:nth-child(3).active ~ .indicator {
+          transform: translateY(4.5rem * 2);
+        }
+        &:nth-child(4).active ~ .indicator {
+          transform: translateY(4.5rem * 3);
+        }
+        &:nth-child(5).active ~ .indicator {
+          transform: translateY(4.5rem * 4);
         }
       }
-
-      &.active {
-        background: var(--accent);
-        transform: scale(1.15);
-        color: lighten(#b6b6b6, $amount: 50%);
-      }
-
-      & .tooltip {
+      & .indicator {
         position: absolute;
-        width: fit-content;
-        height: fit-content;
-        padding: 0.4rem 1.5rem;
-        font-size: 1rem;
-        text-transform: capitalize;
-        color: var(--bg);
-        background: var(--heading-clr);
-        left: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        visibility: hidden;
+        top: 0;
+        right: -50%;
+        width: 4.3rem;
+        height: 4.3rem;
+        background: var(--accent);
+        border-radius: 50%;
+        border: 0.44rem solid var(--bg);
+        transition: transform 0.5s;
 
-        &::before {
+        &::before,
+        &::after {
           content: "";
           position: absolute;
-          width: 0;
-          height: 0;
-          border-top: 8px solid transparent;
-          border-right: 13px solid var(--heading-clr);
-          border-bottom: 8px solid transparent;
-          right: 98%;
-          top: 50%;
-          transform: translateY(-50%);
+          width: 1.31rem;
+          height: 1.31rem;
+          left: 50%;
+          background: transparent;
+          box-shadow: 0.56rem 0px 0 0 var(--bg);
+          transform: translateX(-88%);
         }
-
-        @include tablet {
-          display: none;
+        &::before {
+          top: -1.56rem;
+          border-bottom-right-radius: 100%;
         }
-        @include mobile {
-          display: none;
+        &::after {
+          bottom: -1.56rem;
+          border-top-right-radius: 100%;
         }
       }
     }
   }
-
   @include tablet {
-    width: 65vw;
-    bottom: -15vh;
+    width: fit-content;
+    height: fit-content;
+    bottom: 5vh;
     left: 50vw;
     transform: translateX(-50%);
 
-    .icons {
-      flex-direction: row;
-      a {
-        font-size: 2.4rem;
-        width: 3.9rem;
-        height: 3.9rem;
-      }
-    }
+    .navigation {
+      padding-inline: 2rem;
+      padding-block: unset;
 
-    &.show {
-      bottom: 5vh;
+      .icons {
+        display: flex;
+
+        li {
+          width: 3.5rem;
+
+          .navigate {
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+
+            & .icon {
+              font-size: 2rem;
+              line-height: 4.4rem;
+            }
+
+            & .tooltip {
+              font-size: 0.9rem;
+              transform: translateY(100%);
+            }
+          }
+
+          &.active {
+            .navigate {
+              & .icon {
+                transform: translateY(-60%) scale(0.75);
+              }
+
+              & .tooltip {
+                opacity: 1;
+                transform: translateY(35%) scale(0.8);
+              }
+            }
+          }
+
+          &:nth-child(1).active ~ .indicator {
+            transform: translate(3.5rem * 0, 0);
+          }
+          &:nth-child(2).active ~ .indicator {
+            transform: translate(3.5rem * 1, 0);
+          }
+          &:nth-child(3).active ~ .indicator {
+            transform: translate(3.5rem * 2, 0);
+          }
+          &:nth-child(4).active ~ .indicator {
+            transform: translate(3.5rem * 3, 0);
+          }
+          &:nth-child(5).active ~ .indicator {
+            transform: translate(3.5rem * 4, 0);
+          }
+          &:nth-child(6).active ~ .indicator {
+            transform: translate(3.5rem * 5, 0);
+          }
+        }
+        & .indicator {
+          position: absolute;
+          top: -50%;
+          right: unset;
+          width: 3.6rem;
+          height: 3.6rem;
+          background: var(--accent);
+          border-radius: 50%;
+          border: 0.44rem solid var(--bg);
+          transition: transform 0.5s;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0.94rem;
+            height: 0.94rem;
+            background: transparent;
+            top: 50%;
+            left: unset;
+            transform: translateY(50%);
+            box-shadow: 0px -0.38rem 0 0 var(--bg);
+          }
+          &::before {
+            border-bottom-right-radius: 0;
+            left: -0.94rem;
+            border-top-right-radius: 0.94rem;
+          }
+          &::after {
+            right: -0.94rem;
+            border-top-left-radius: 100%;
+            bottom: unset;
+            border-top-right-radius: unset;
+          }
+        }
+      }
     }
   }
 
   @include mobile {
-    width: 80vw;
-    bottom: -15vh;
-    left: 50vw;
-    transform: translateX(-50%);
-
-    .icons {
-      flex-direction: row;
-      a {
-        font-size: 2rem;
-        width: 2.8rem;
-        height: 2.8rem;
-        transform: scale(0.95);
-      }
-    }
-
+    bottom: -35vh;
     &.show {
       bottom: 4vh;
     }

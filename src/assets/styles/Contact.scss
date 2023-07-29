@@ -29,7 +29,6 @@
   .connect {
     max-width: 100%;
     display: flex;
-    flex-wrap: wrap;
     gap: 5vw;
 
     p {
@@ -165,6 +164,7 @@
 
     .connect {
       gap: 15vw;
+      flex-direction: column;
 
       p {
         margin-left: unset;
@@ -173,6 +173,12 @@
       .hire-container {
         .btn {
           align-self: center;
+        }
+      }
+
+      .email-container {
+        .project-form {
+          width: 100%;
         }
       }
     }

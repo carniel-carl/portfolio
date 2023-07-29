@@ -11,7 +11,7 @@ const About = () => {
     Aos.init({ duration: 800 });
   }, []);
   return (
-    <section id="about" className="about">
+    <section id="about" className="about home">
       <div className="image-container" data-aos="fade-right">
         <div className="image">
           <img src={profile} alt="profile pic" />

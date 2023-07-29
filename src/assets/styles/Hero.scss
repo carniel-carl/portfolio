@@ -2,7 +2,7 @@
 
 .hero {
   padding-block: 5vh;
-  padding-inline: 12vw;
+  padding-inline: 15vw 10vw;
   display: flex;
   flex-direction: column;
   gap: 30vh;
@@ -129,14 +129,14 @@
   }
 
   @include tablet {
-    height: 80vh;
-    gap: 20vh;
+    height: 100vh;
+    // gap: 23vh;
     padding-inline: 8.5vw;
 
     .bg {
-      width: 55%;
-      background-size: 85%;
-      background-position-x: 250%;
+      width: 70%;
+      background-size: 110%;
+      background-position-x: -200%;
     }
 
     .hero-items {
@@ -154,7 +154,7 @@
 
   @include mobile {
     grid-template-columns: 1fr;
-    // height: 100vh;
+    height: 100vh;
     gap: 30vh;
     padding-inline: 6vw;
 

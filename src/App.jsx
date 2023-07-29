@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatNav from "./components/FloatNav";
 import Loader from "./components/Loader";
+import { BrowserRouter } from "react-router-dom";
 
 export const themeContext = createContext(null);
 
@@ -37,7 +38,7 @@ function App() {
     localStorage.setItem("lightTheme", !lightTheme);
   };
 
-  // TIMER FOR CLEARING OUT THE LOADING SCREEN
+  // TIMER FOR CLEARING OUT THE LOADING SCREEN AND USEEFFECT FOR SETTING CSS CUSTOM VARIABLE FROM LOCALSTORAGE
   useEffect(() => {
     document.documentElement.style.setProperty("--accent", accent);
     const timer = setTimeout(() => {
@@ -50,33 +51,35 @@ function App() {
   }, []);
 
   return (
-    <AnimatePresence>
-      <themeContext.Provider value={{ themeToggler, lightTheme }}>
-        <Loader open={open} />
-        {open && (
-          <main>
-            <Hero />
-            <div className="divider" />
-            <div className="App">
-              <About />
-
+    <BrowserRouter>
+      <AnimatePresence>
+        <themeContext.Provider value={{ themeToggler, lightTheme, accent }}>
+          <Loader open={open} />
+          {open && (
+            <main>
+              <Hero />
               <div className="divider" />
+              <div className="App">
+                <About />
 
-              <Project />
-              <div className="divider" />
+                <div className="divider" />
 
-              <Skills />
-              <div className="divider" />
+                <Project />
+                <div className="divider" />
 
-              <Contact />
-              <div className="divider" />
-              <Footer />
-              <FloatNav />
-            </div>
-          </main>
-        )}
-      </themeContext.Provider>
-    </AnimatePresence>
+                <Skills />
+                <div className="divider" />
+
+                <Contact />
+                <div className="divider" />
+                <Footer />
+                <FloatNav />
+              </div>
+            </main>
+          )}
+        </themeContext.Provider>
+      </AnimatePresence>
+    </BrowserRouter>
   );
 }
 

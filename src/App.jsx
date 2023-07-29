@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import FloatNav from "./components/FloatNav";
 import Loader from "./components/Loader";
 import { BrowserRouter } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const themeContext = createContext(null);
 
@@ -73,6 +74,7 @@ function App() {
                 <Contact />
                 <div className="divider" />
                 <Footer />
+                <ScrollToTop />
                 <FloatNav />
               </div>
             </main>

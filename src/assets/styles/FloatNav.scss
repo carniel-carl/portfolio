@@ -39,6 +39,7 @@
           align-items: center;
           justify-content: center;
           z-index: 2;
+          cursor: pointer;
 
           & .icon {
             font-size: 2.5rem;
@@ -62,6 +63,7 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
             transform: translateX(-100%);
+            user-select: none;
           }
         }
 
@@ -69,6 +71,7 @@
           & .navigate {
             & .icon {
               transform: translateX(130%) scale(0.7);
+              color: lighten($color: #e1e1e1, $amount: 100%);
             }
 
             & .tooltip {
@@ -130,7 +133,7 @@
   @include tablet {
     width: fit-content;
     height: fit-content;
-    bottom: 5vh;
+    bottom: 6vh;
     left: 50vw;
     transform: translateX(-50%);
 
@@ -234,7 +237,7 @@
   @include mobile {
     bottom: -35vh;
     &.show {
-      bottom: 4vh;
+      bottom: 12vh;
     }
   }
 }

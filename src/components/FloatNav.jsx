@@ -1,14 +1,8 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 
 import "./../assets/styles/FloatNav.scss";
 
 import { navLinksData } from "../data/link-data";
-
-import { FaHome } from "react-icons/fa";
-import { FaTools } from "react-icons/fa";
-import { BsChatDotsFill } from "react-icons/bs";
-import { GoPersonFill } from "react-icons/go";
-import { MdWork } from "react-icons/md";
 
 const FloatNav = () => {
   const [showFloatNav, setShowFloatNav] = useState(false);
@@ -70,7 +64,7 @@ const FloatNav = () => {
     };
   }, []);
 
-  const scrollToSection = (elementRef) => {
+  const scrollToSection = useCallback((elementRef) => {
     if (elementRef === "#") {
       window.scrollTo({
         top: 0,
@@ -82,7 +76,7 @@ const FloatNav = () => {
     window.scrollTo({
       top: section?.offsetTop,
     });
-  };
+  }, []);
 
   return (
     <nav className={`float-nav ${showFloatNav ? "show" : ""}`}>

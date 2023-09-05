@@ -35,4 +35,15 @@ body {
       z-index: 15;
     }
   }
+
+  * section:not(:first-of-type) {
+    margin-inline: 18vw 10vw;
+
+    @include tablet {
+      margin-inline: 8.5vw;
+    }
+    @include mobile {
+      margin-inline: 7.5vw;
+    }
+  }
 }

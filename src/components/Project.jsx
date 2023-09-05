@@ -66,16 +66,8 @@ const Project = () => {
       </h2>
       <div className="carousel" data-aos="zoom-in">
         <Swiper
-          slidesPerView={2}
-          spaceBetween={35}
-          breakpoints={{
-            600: {
-              slidesPerView: "auto",
-            },
-            0: {
-              slidesPerView: 1,
-            },
-          }}
+          slidesPerView="auto"
+          spaceBetween={32}
           grabCursor={true}
           centeredSlides={false}
           loop={false}

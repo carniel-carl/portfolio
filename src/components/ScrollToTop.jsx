@@ -11,7 +11,7 @@ const ScrollToTop = () => {
 
     window.addEventListener("scroll", () => {
       const position = window.scrollY;
-      if (position > pageHeight - pageHeight / 5) {
+      if (position > pageHeight - pageHeight / 4.5) {
         document.documentElement.style.setProperty("--display", "block");
       } else {
         document.documentElement.style.setProperty("--display", "none");

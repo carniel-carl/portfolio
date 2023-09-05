@@ -52,36 +52,35 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <AnimatePresence>
-        <themeContext.Provider value={{ themeToggler, lightTheme, accent }}>
-          <Loader open={open} />
-          {open && (
+    <AnimatePresence>
+      <themeContext.Provider value={{ themeToggler, lightTheme, accent }}>
+        <Loader open={open} />
+        {open && (
+          <>
             <main>
               <Hero />
               <div className="divider" />
-              <div className="App">
-                <About />
 
-                <div className="divider" />
+              <About />
 
-                <Project />
-                <div className="divider" />
+              <div className="divider" />
 
-                <Skills />
-                <div className="divider" />
+              <Project />
+              <div className="divider" />
 
-                <Contact />
-                <div className="divider" />
-                <Footer />
-                <ScrollToTop />
-                <FloatNav />
-              </div>
+              <Skills />
+              <div className="divider" />
+
+              <Contact />
+              <div className="divider" />
             </main>
-          )}
-        </themeContext.Provider>
-      </AnimatePresence>
-    </BrowserRouter>
+            <Footer />
+            <ScrollToTop />
+            <FloatNav />
+          </>
+        )}
+      </themeContext.Provider>
+    </AnimatePresence>
   );
 }
 

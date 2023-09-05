@@ -1,26 +1,11 @@
 @import "./assets/styles/config";
 
 main {
-  .App {
-    margin-inline: 18vw 10vw;
-  }
-
   .divider {
     width: 4rem;
     border-bottom: dotted var(--txt-clr);
     border-bottom-width: 0.3rem;
     margin-inline: auto;
     margin-block: 4vh;
-  }
-
-  @include tablet {
-    .App {
-      margin-inline: 8.5vw;
-    }
-  }
-  @include mobile {
-    .App {
-      margin-inline: 7.5vw;
-    }
   }
 }

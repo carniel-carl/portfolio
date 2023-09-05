@@ -30,7 +30,12 @@ const About = () => {
           tempore quam rem doloremque.
         </p>
 
-        <a href="#projects">View Projects</a>
+        <div className="btns">
+          <a href="#projects" className="cv-link">
+            Download CV
+          </a>
+          <a href="#projects">View Projects</a>
+        </div>
       </div>
     </section>
   );

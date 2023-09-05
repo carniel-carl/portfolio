@@ -23,8 +23,8 @@
       padding: 3rem 2rem;
 
       .project {
-        max-width: 19rem;
-        height: 27rem;
+        max-width: 30rem;
+        height: 35rem;
         border-radius: 0.6rem;
         overflow: hidden;
         text-align: left;
@@ -33,7 +33,7 @@
 
         &__image {
           width: 100%;
-          height: 80%;
+          height: 60%;
           overflow: hidden;
           background-color: var(--accent);
         }
@@ -101,6 +101,10 @@
     .carousel {
       .projects_content {
         padding: 1rem;
+
+        .project {
+          height: 28rem;
+        }
 
         .slider-controls {
           &__next,

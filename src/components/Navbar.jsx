@@ -35,7 +35,7 @@ const Navbar = () => {
   useEffect(() => {
     const picker = document.getElementById("picker");
     const colorPicker = new iro.ColorPicker(picker, {
-      width: 220,
+      width: 250,
       color: accent,
       wheelLightness: false,
       sliderSize: 20,
@@ -86,7 +86,7 @@ const Navbar = () => {
           </p>
         </a>
       </div>
-      <div className="nav-dropdown">
+      {/* <div className="nav-dropdown">
         <nav>
           <ul>
             <li>
@@ -103,8 +103,11 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */}
 
+      <span onClick={themeToggler} className="mode-icon">
+        {lightTheme ? <FaMoon /> : <BsFillSunFill />}
+      </span>
       <div className="toggle" ref={dropdownRef}>
         <div
           className="theme-icon"
@@ -115,9 +118,6 @@ const Navbar = () => {
 
         <div className={`color-picker ${showDropdown ? "show-dropdown" : ""}`}>
           <div id="picker" className="picker"></div>
-          <span onClick={themeToggler}>
-            {lightTheme ? <FaMoon /> : <BsFillSunFill />}
-          </span>
         </div>
       </div>
     </header>

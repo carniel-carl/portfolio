@@ -121,14 +121,89 @@
           }
         }
 
+        // .submit {
+        //   @extend .btn-sec;
+        //   border-radius: 4rem;
+        //   align-self: center;
+        //   display: inline-flex;
+        //   align-items: center;
+        //   gap: 0.5rem;
+        //   font-size: 1.1rem;
+
+        //   .checkmark {
+        //     display: none;
+        //   }
+
+        //   &:focus {
+        //     .checkmark {
+        //       display: inline;
+        //     }
+
+        //     .send-icon {
+        //       display: none;
+        //     }
+        //   }
+
+        //   &:disabled {
+        //     background: red;
+        //   }
+        // }
         .submit {
-          @extend .btn-sec;
-          border-radius: 4rem;
-          align-self: center;
-          display: inline-flex;
+          width: 130px;
+          height: 50px;
+          background: none;
+          border-top: 2px dashed var(--accent);
+          border-bottom: 2px dashed var(--accent);
+          border-left: 2px solid var(--accent);
+          border-right: 2px solid var(--accent);
+          border-radius: 50px;
+          display: flex;
           align-items: center;
-          gap: 0.5rem;
-          font-size: 1.1rem;
+          justify-content: center;
+          cursor: pointer;
+          transition: 500ms;
+        }
+
+        span,
+        svg {
+          position: absolute;
+          color: var(--accent);
+          fill: transparent;
+          font-size: 20px;
+          letter-spacing: 0.2em;
+          font-weight: 400;
+        }
+        .submit:focus {
+          outline: none;
+          border: 2px solid transparent;
+          width: 50px;
+          border-left: 2px solid var(--accent);
+          border-bottom: 2px solid var(--accent);
+          animation: spin 2s 500ms forwards;
+        }
+        .submit:focus span {
+          color: transparent;
+        }
+        .submit:focus svg {
+          animation: check 500ms 2300ms forwards;
+        }
+
+        /* Let's Animate */
+
+        @keyframes spin {
+          80% {
+            border: 2px solid transparent;
+            border-left: 2px solid var(--accent);
+          }
+          100% {
+            transform: rotate(1080deg);
+            border: 2px solid var(--accent);
+          }
+        }
+        @keyframes check {
+          to {
+            fill: var(--accent);
+          }
         }
       }
     }

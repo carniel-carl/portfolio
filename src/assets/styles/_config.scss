@@ -8,19 +8,29 @@
   box-sizing: border-box;
 }
 
+$green: #7ac142;
+$white: #fff;
+
+// Misc
+$curve: cubic-bezier(0.65, 0, 0.45, 1);
+
 :root {
-  --bg: #1b1b1b;
+  --bg: #171b20;
   --accent: #eb5e27;
   --txt-clr: #d4d4d4;
   --heading-clr: #e8e8e8;
+  --black: #000;
   --ff-cor: "Cormorant Garamond", serif;
   --ff-fig: Verdana, Geneva, Tahoma, sans-serif;
   --fw-400: 400;
   --fw-700: 700;
+  --grad: rgba(0, 0, 0, 0.5);
   --gradient: rgba(0, 0, 0, 0.5);
   --gradient2: rgba(255, 255, 255, 0.3);
   --display: none;
 }
+
+$accent: var(--accent);
 
 a {
   text-decoration: none;
@@ -54,7 +64,7 @@ img {
 }
 
 .btn-primary {
-  color: white;
+  color: var(--black);
   background: var(--accent);
   padding: 0.8rem 1.4rem;
   text-transform: uppercase;

@@ -2,8 +2,6 @@
 
 .skill-container {
   padding-block: 5vh;
-  max-width: 80vw;
-  margin-inline: auto;
   color: var(--heading-clr);
   position: relative;
 
@@ -17,6 +15,11 @@
   }
 
   .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.5rem;
+
+    justify-items: center;
     .skill {
       display: flex;
       align-items: center;
@@ -37,21 +40,23 @@
     }
   }
 
+  @include tablet {
+    padding-block: 8vh;
+
+    .skills {
+      grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    }
+  }
+
   @include mobile {
     padding-block: 5vh;
+
+    .skills {
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    }
 
     h2 {
       margin-inline: unset;
     }
-
-    .skill {
-      &-arrow {
-        width: 1.4rem;
-      }
-    }
-  }
-
-  @include tablet {
-    padding-block: 8vh;
   }
 }

@@ -1,6 +1,9 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useMemo } from "react";
 import { AnimatePresence } from "framer-motion";
 import "./App.scss";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -32,6 +35,10 @@ function App() {
       page.classList.toggle("light", true);
     }
   }, [lightTheme]);
+
+  useMemo(() => {
+    Aos.init({ duration: 800 });
+  }, []);
 
   // TOGGLE THEME
   const themeToggler = () => {

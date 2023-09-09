@@ -1,17 +1,32 @@
-import React, { useMemo } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import React, { useState, useRef, useEffect } from "react";
+
+import { useForm, ValidationError } from "@formspree/react";
 
 import icon from "./../assets/images/react-icon.svg";
 import "./../assets/styles/Contact.scss";
 
 import { BiSend } from "react-icons/bi";
 import { HiDownload } from "react-icons/hi";
+import CheckMark from "./UI/CheckMark";
+
+const id = import.meta.env.VITE_FORM_ID;
 
 const Contact = () => {
-  useMemo(() => {
-    Aos.init({ duration: 800 });
-  }, []);
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const msgRef = useRef("");
+
+  const [state, handleSubmit] = useForm(id);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nameRef.current.value = "";
+      emailRef.current.value = "";
+      msgRef.current.value = "";
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [state.succeeded, state.submitting]);
 
   return (
     <section id="contact" className="contact home">
@@ -29,28 +44,50 @@ const Contact = () => {
         <div className="email-container" data-aos="fade-left">
           <p>Connect with me</p>
           <div className="project-form">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <div className="input-area">
-                <input type="text" name="name" required className="input" />
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="input"
+                  ref={nameRef}
+                />
                 <span className="label">Name</span>
               </div>
+
               <div className="input-area">
-                <input type="text" name="email" required className="input" />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="input"
+                  id="email"
+                  ref={emailRef}
+                />
                 <span className="label">Email</span>
               </div>
+
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
               <div className="input-area textarea">
                 <textarea
                   type="textarea"
-                  name="project"
+                  name="message"
+                  id="message"
                   required
                   className="input"
+                  ref={msgRef}
                 />
                 <span className="label">Project</span>
               </div>
 
               <button className="submit">
                 <span>Send</span>
-                <BiSend />
+                <CheckMark />
               </button>
             </form>
           </div>

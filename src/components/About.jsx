@@ -1,15 +1,10 @@
 import React, { useMemo } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 import "./../assets/styles/About.scss";
 
 import profile from "./../assets/images/profile-pic.jpg";
 
 const About = () => {
-  useMemo(() => {
-    Aos.init({ duration: 800 });
-  }, []);
   return (
     <section id="about" className="about home">
       <div className="image-container" data-aos="fade-right">

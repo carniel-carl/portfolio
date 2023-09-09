@@ -2,9 +2,11 @@ import React, { useMemo } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-import arrow from "./../assets/images/arrow-icon.svg";
-
 import "./../assets/styles/Skills.scss";
+import SkillCard from "./UI/SkillCard";
+import { FaReact } from "react-icons/fa";
+
+import { skillsData } from "../data/link-data";
 
 const Skills = () => {
   useMemo(() => {
@@ -15,7 +17,10 @@ const Skills = () => {
     <section id="skill" className="skill-container home">
       <h2 data-aos="fade-up">Skills</h2>
       <div className="skills">
-        <div className="skill" data-aos="fade-up">
+        {skillsData.map((data) => (
+          <SkillCard icon={<data.icon />} key={data.title} title={data.title} />
+        ))}
+        {/* <div className="skill" data-aos="fade-up">
           <p className="skill-title">ReactJs</p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
@@ -37,21 +42,21 @@ const Skills = () => {
           </div>
         </div>
         <div className="skill" data-aos="fade-up">
-          <p className="skill-title">CSS/SCCS (BEM)</p>
+          <p className="skill-title"></p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
           </div>
         </div>
         <div className="skill" data-aos="fade-up">
-          <p className="skill-title">Tailwind</p>
+          <p className="skill-title"></p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
           </div>
         </div>
         <div className="skill" data-aos="fade-up">
-          <p className="skill-title">Python</p>
+          <p className="skill-title"></p>
           <div className="skill-dash"></div>
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
@@ -71,7 +76,7 @@ const Skills = () => {
           <div className="skill-arrow">
             <img src={arrow} alt="arrow icon" aria-hidden="true" />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

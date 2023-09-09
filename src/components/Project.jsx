@@ -1,6 +1,4 @@
 import React, { useMemo } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -56,9 +54,6 @@ const datas = [
 ];
 
 const Project = () => {
-  useMemo(() => {
-    Aos.init({ duration: 800 });
-  }, []);
   return (
     <section id="projects" className="projects home">
       <h2 className="projects__heading" data-aos="fade-up">

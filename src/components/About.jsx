@@ -33,7 +33,6 @@ const About = () => {
           >
             Download CV
           </a>
-          <a href="#projects">View Projects</a>
         </div>
       </div>
     </section>

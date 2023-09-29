@@ -140,6 +140,8 @@
     .navigation {
       padding-inline: 2rem;
       padding-block: unset;
+      height: 100%;
+      width: 100%;
 
       .icons {
         display: flex;
@@ -235,9 +237,8 @@
   }
 
   @include mobile {
-    bottom: -35vh;
-    &.show {
-      bottom: 3vh;
-    }
+    width: fit-content;
+    height: fit-content;
+    bottom: 3vh;
   }
 }

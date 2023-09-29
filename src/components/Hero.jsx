@@ -60,22 +60,6 @@ const titles = ["Nmugha Chimezie.", "Carniel."];
 const bubble = Array.from({ length: 6 });
 
 const Hero = () => {
-  // BACKGROUND PARALLAX
-  useEffect(() => {
-    const parallax = document.querySelector(".bg");
-
-    const scrollOffset = () => {
-      let offset = window.scrollY;
-      parallax.style.backgroundPositionY = -offset * 0.5 + "px";
-    };
-
-    window.addEventListener("scroll", scrollOffset);
-
-    return () => {
-      window.removeEventListener("scroll", scrollOffset);
-    };
-  }, []);
-
   return (
     <motion.section
       id="hero"

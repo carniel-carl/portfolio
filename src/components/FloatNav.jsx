@@ -5,7 +5,7 @@ import "./../assets/styles/FloatNav.scss";
 import { navLinksData } from "../data/link-data";
 
 const FloatNav = () => {
-  const [showFloatNav, setShowFloatNav] = useState(false);
+  // const [showFloatNav, setShowFloatNav] = useState(false);
 
   useEffect(() => {
     const navlink = document.querySelector(".float-nav li");
@@ -13,25 +13,25 @@ const FloatNav = () => {
   }, []);
 
   // TIMER FOR SHOWING FLOATING NAVIGATION
-  useEffect(() => {
-    let timeoutid;
+  // useEffect(() => {
+  //   let timeoutid;
 
-    const handleScroll = () => {
-      clearTimeout(timeoutid);
-      setShowFloatNav(false);
+  //   const handleScroll = () => {
+  //     clearTimeout(timeoutid);
+  //     setShowFloatNav(false);
 
-      timeoutid = setTimeout(() => {
-        setShowFloatNav(true);
-      }, 800);
-    };
+  //     timeoutid = setTimeout(() => {
+  //       setShowFloatNav(true);
+  //     }, 800);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      clearTimeout(timeoutid);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(timeoutid);
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   // SETTING THE ACTIVE NAV LINK BASED ON SCROLLED POSITION
   useEffect(() => {
@@ -79,7 +79,7 @@ const FloatNav = () => {
   }, []);
 
   return (
-    <nav className={`float-nav ${showFloatNav ? "show" : ""}`}>
+    <nav className={"float-nav"}>
       <div className="navigation">
         <ul className="icons">
           {navLinksData.links.map((data, id) => (

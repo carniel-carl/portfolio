@@ -5,7 +5,6 @@ import { useForm, ValidationError } from "@formspree/react";
 import icon from "./../assets/images/react-icon.svg";
 import "./../assets/styles/Contact.scss";
 
-import { BiSend } from "react-icons/bi";
 import { HiDownload } from "react-icons/hi";
 import CheckMark from "./UI/CheckMark";
 
@@ -44,7 +43,7 @@ const Contact = () => {
         <div className="email-container" data-aos="fade-left">
           <p>Connect with me</p>
           <div className="project-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} method="post">
               <div className="input-area">
                 <input
                   type="text"

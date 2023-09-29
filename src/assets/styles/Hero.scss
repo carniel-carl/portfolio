@@ -16,12 +16,12 @@
     height: 100vh;
     right: 0;
     top: 0;
-    background: linear-gradient(0deg, var(--gradient), var(--gradient)),
-      url("/src/assets/images/profile-pic.jpg");
-    background-position-x: 1rem;
-    background-size: cover;
+    // background-position-x: 1rem;
     background-repeat: no-repeat;
     z-index: -5;
+    object-fit: cover;
+    opacity: 0.5;
+    object-position: left;
   }
 
   .bubble {
@@ -134,8 +134,6 @@
 
     .bg {
       width: 60%;
-      background-size: cover;
-      background-position-x: 30%;
     }
 
     .hero-items {
@@ -158,8 +156,6 @@
 
     .bg {
       width: 100%;
-      background-position-x: 15%;
-      background-size: cover;
       clip-path: polygon(0% 0%, 100% 0, 100% 75%, 50% 90%, 0 75%);
     }
 

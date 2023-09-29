@@ -17,13 +17,14 @@
     border-radius: 4rem;
     background: #38383880;
     backdrop-filter: blur(0.3rem);
+    -webkit-backdrop-filter: blur(0.3rem);
     display: flex;
     align-items: center;
     justify-content: center;
 
     .icons {
-      width: fit-content;
-      height: fit-content;
+      width: auto;
+      height: auto;
       position: relative;
 
       li {
@@ -131,8 +132,8 @@
     }
   }
   @include tablet {
-    width: fit-content;
-    height: fit-content;
+    // width: fit-content;
+    // height: fit-content;
     bottom: 5vh;
     left: 50vw;
     transform: translateX(-50%);

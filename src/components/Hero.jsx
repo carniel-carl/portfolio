@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 
 import "./../assets/styles/Hero.scss";
+import profile from "./../assets/images/profile-pic.jpg";
 
 import Typing from "./Typing";
 
@@ -91,7 +92,15 @@ const Hero = () => {
           </motion.h2>
         </div>
       </div>
-      <div className="bg"></div>
+      <div>
+        <img
+          className="bg"
+          src={profile}
+          alt="background"
+          loading="lazy"
+          role="presentation"
+        />
+      </div>
 
       <ul>
         {bubble.map((_, i) => (

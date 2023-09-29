@@ -47,18 +47,18 @@ img {
 }
 
 @mixin mobile {
-  @media screen and (width < 599px) {
+  @media screen and (max-width: 34.4rem) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media screen and (width < 1199px) {
+  @media screen and (max-width: 75rem) {
     @content;
   }
 }
 @mixin wide_screen {
-  @media screen and (width > 1500px) {
+  @media screen and (min-width: 94rem) {
     @content;
   }
 }

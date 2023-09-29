@@ -34,7 +34,12 @@ const Contact = () => {
       <div className="connect">
         <div className="hire-container" data-aos="fade-right">
           <p>Hire me</p>
-          <a href="/" className="btn">
+          <a
+            href="CHIMEZIE RESUME"
+            className="btn"
+            download="CHIMEZIE RESUME.pdf"
+            target="_blank"
+          >
             <span>Download resume</span>
             <HiDownload />
           </a>

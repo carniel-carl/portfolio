@@ -25,7 +25,12 @@ const About = () => {
         </p>
 
         <div className="btns">
-          <a href="#projects" className="cv-link">
+          <a
+            href="CHIMEZIE RESUME.pdf"
+            className="cv-link"
+            download="CHIMEZIE RESUME"
+            target="_blank"
+          >
             Download CV
           </a>
           <a href="#projects">View Projects</a>

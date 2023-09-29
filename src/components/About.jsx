@@ -16,13 +16,12 @@ const About = () => {
       <div className="text-container">
         <h2 data-aos="fade-up">About</h2>
         <p data-aos="fade-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          suscipit, rem numquam exercitationem dolorum obcaecati cum ipsum,
-          tempora, consectetur nulla fuga ea quia fugit expedita culpa libero.
-          Dolore, cupiditate nemo. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Autem tenetur dolore soluta alias, quae qui eaque
-          maxime totam dicta itaque excepturi optio sunt esse iusto, labore
-          tempore quam rem doloremque.
+          I'm a passionate individual who discovered my love for coding when I
+          needed a website for my Art business. Since then, I've immersed myself
+          in the world of technology, continually expanding my coding skills and
+          exploring the endless possibilities it offers. I find joy in bringing
+          creativity and functionality together through code, making my journey
+          in the tech world both fulfilling and exciting.
         </p>
 
         <div className="btns">

@@ -5,6 +5,19 @@ import "./../assets/styles/About.scss";
 import profile from "./../assets/images/profile-pic.jpg";
 
 const About = () => {
+  const url = window.location.href;
+
+  const clickHandler = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          url: url,
+        })
+        .then(() => console.log("thanks for sharing"))
+        .catch(console.error);
+    }
+  };
+
   return (
     <section id="about" className="about home">
       <div className="image-container" data-aos="fade-right">
@@ -33,6 +46,10 @@ const About = () => {
           >
             Download CV
           </a>
+
+          <button type="button" onClick={clickHandler}>
+            Share
+          </button>
         </div>
       </div>
     </section>

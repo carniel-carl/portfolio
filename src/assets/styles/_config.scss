@@ -15,10 +15,11 @@ $white: #fff;
 $curve: cubic-bezier(0.65, 0, 0.45, 1);
 
 :root {
-  --bg: #171b20;
+  // --bg: #171b20;
+  --bg: #0e1114;
   --accent: #eb5e27;
   --txt-clr: #d4d4d4;
-  --heading-clr: #e8e8e8;
+  --heading-clr: #f6f6f6;
   --black: #000;
   --ff-cor: "Cormorant Garamond", serif;
   --ff-fig: Verdana, Geneva, Tahoma, sans-serif;
@@ -157,7 +158,8 @@ img {
 
 .light {
   // --bg: #f6f6f6;
-  --bg: #faf9f6;
+  // --bg: #faf9f6;
+  --bg: #f9f9f9;
   --txt-clr: #373737;
   --heading-clr: #171616;
   --gradient: rgba(255, 255, 255, 0.5);

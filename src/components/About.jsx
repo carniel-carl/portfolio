@@ -5,18 +5,18 @@ import "./../assets/styles/About.scss";
 import profile from "./../assets/images/profile-pic.jpg";
 
 const About = () => {
-  // const url = window.location.href;
+  const url = window.location.href;
 
-  // const clickHandler = () => {
-  //   if (navigator.share) {
-  //     navigator
-  //       .share({
-  //         url: url,
-  //       })
-  //       .then(() => console.log("thanks for sharing"))
-  //       .catch(console.error);
-  //   }
-  // };
+  const clickHandler = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          url: url,
+        })
+        .then(() => console.log("thanks for sharing"))
+        .catch(console.error);
+    }
+  };
 
   return (
     <section id="about" className="about home">
@@ -47,9 +47,9 @@ const About = () => {
             Download CV
           </a>
 
-          {/* <button type="button" onClick={clickHandler}>
+          <button type="button" onClick={clickHandler}>
             Share
-          </button> */}
+          </button>
         </div>
       </div>
     </section>

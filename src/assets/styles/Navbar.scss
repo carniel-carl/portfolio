@@ -124,3 +124,12 @@ header {
     }
   }
 }
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  inset: 0;
+  background: rgba($color: #000000, $alpha: 0.7);
+  z-index: 15;
+}

@@ -73,20 +73,21 @@ const Navbar = () => {
   //  TO PREVENT SCROLLING WHEN DROPDOWN IS VISIBLE
   useEffect(() => {
     showDropdown
-      ? document.body.classList.add("no-scroll")
-      : document.body.classList.remove("no-scroll");
+      ? document.body.classList.add("hidden")
+      : document.body.classList.remove("hidden");
   }, [showDropdown]);
 
   return (
-    <header>
-      <div className="logo">
-        <a href="/">
-          <p className="logo__title">
-            Car<span>Niel</span>
-          </p>
-        </a>
-      </div>
-      {/* <div className="nav-dropdown">
+    <>
+      <header>
+        <div className="logo">
+          <a href="/">
+            <p className="logo__title">
+              Car<span>Niel</span>
+            </p>
+          </a>
+        </div>
+        {/* <div className="nav-dropdown">
         <nav>
           <ul>
             <li>
@@ -105,22 +106,27 @@ const Navbar = () => {
         </nav>
       </div> */}
 
-      <span onClick={themeToggler} className="mode-icon">
-        {lightTheme ? <FaMoon /> : <BsFillSunFill />}
-      </span>
-      <div className="toggle" ref={dropdownRef}>
-        <div
-          className="theme-icon"
-          onClick={() => setShowDropdown((prev) => !prev)}
-        >
-          {showDropdown ? <AiOutlineClose /> : <IoColorPaletteSharp />}
-        </div>
+        <span onClick={themeToggler} className="mode-icon">
+          {lightTheme ? <FaMoon /> : <BsFillSunFill />}
+        </span>
+        <div className="toggle" ref={dropdownRef}>
+          <div
+            className="theme-icon"
+            onClick={() => setShowDropdown((prev) => !prev)}
+          >
+            {showDropdown ? <AiOutlineClose /> : <IoColorPaletteSharp />}
+          </div>
 
-        <div className={`color-picker ${showDropdown ? "show-dropdown" : ""}`}>
-          <div id="picker" className="picker"></div>
+          <div
+            className={`color-picker ${showDropdown ? "show-dropdown" : ""}`}
+          >
+            <div id="picker" className="picker"></div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* <div className="backdrop" /> */}
+    </>
   );
 };
 

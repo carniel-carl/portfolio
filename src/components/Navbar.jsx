@@ -73,8 +73,8 @@ const Navbar = () => {
   //  TO PREVENT SCROLLING WHEN DROPDOWN IS VISIBLE
   useEffect(() => {
     showDropdown
-      ? document.body.classList.add("hidden")
-      : document.body.classList.remove("hidden");
+      ? document.body.classList.add("no-scroll")
+      : document.body.classList.remove("no-scroll");
   }, [showDropdown]);
 
   return (

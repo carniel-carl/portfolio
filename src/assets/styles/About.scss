@@ -37,7 +37,12 @@
       margin-block-start: 0.5rem;
 
       .cv-link {
+        font-size: 1rem;
         @extend .btn-primary;
+        @extend .btn-primary;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
     }
   }

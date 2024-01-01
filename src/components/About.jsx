@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import "./../assets/styles/About.scss";
 
 import profile from "./../assets/images/profile-pic.jpg";
+import { HiDownload } from "react-icons/hi";
 
 const About = () => {
   // const url = window.location.href;
@@ -44,7 +45,8 @@ const About = () => {
             download="CHIMEZIE RESUME"
             target="_blank"
           >
-            Download CV
+            <span>Download resume</span>
+            <HiDownload />
           </a>
         </div>
       </div>

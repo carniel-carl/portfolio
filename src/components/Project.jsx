@@ -22,36 +22,7 @@ import "../assets/styles/Project.scss";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 
-const datas = [
-  {
-    id: 1,
-    name: "Book App",
-  },
-  {
-    id: 2,
-    name: "Book App 2",
-  },
-  {
-    id: 3,
-    name: "Book App 3",
-  },
-  {
-    id: 4,
-    name: "Book App 4",
-  },
-  {
-    id: 5,
-    name: "Book App 5",
-  },
-  {
-    id: 6,
-    name: "Book App 6",
-  },
-  {
-    id: 7,
-    name: "Book App 7",
-  },
-];
+import projectData from "../data/project-data";
 
 const Project = () => {
   return (
@@ -79,12 +50,30 @@ const Project = () => {
           modules={[EffectCoverflow, Pagination, Navigation, Scrollbar]}
           className="projects_content"
         >
-          {datas.map((data) => {
+          {projectData?.map((data, index) => {
             return (
-              <SwiperSlide className="project" key={data.id}>
-                <div className="project__image"></div>
+              <SwiperSlide className="project" key={index}>
+                <div className="project__image">
+                  <img src={data?.img} alt={data.name} />
+                </div>
                 <div className="project__title">
                   <p>{data.name}</p>
+                </div>
+                <div className="preview_btns">
+                  <a
+                    href={data?.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Preview
+                  </a>
+                  <a
+                    href={data?.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github
+                  </a>
                 </div>
               </SwiperSlide>
             );

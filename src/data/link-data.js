@@ -22,6 +22,7 @@ import {
   SiWebpack,
   SiSqlite,
   SiReactrouter,
+  SiNextdotjs,
 } from "react-icons/si";
 
 export const socialLinks = {
@@ -71,8 +72,8 @@ export const skillsData = [
     icon: SiReactrouter,
   },
   {
-    title: "Redux",
-    icon: SiRedux,
+    title: "NextJs",
+    icon: SiNextdotjs,
   },
   {
     title: "JavaScript",
@@ -85,6 +86,10 @@ export const skillsData = [
   {
     title: "Jest",
     icon: SiJest,
+  },
+  {
+    title: "Redux",
+    icon: SiRedux,
   },
   {
     title: "HTML",

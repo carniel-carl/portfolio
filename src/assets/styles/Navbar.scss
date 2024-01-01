@@ -17,11 +17,11 @@ header {
 
     &__title {
       font-size: 2rem;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-family: var(--ff-fig);
 
       span {
         color: var(--accent);
-        font-weight: var(--fw-700);
+        font-weight: 900;
       }
     }
   }

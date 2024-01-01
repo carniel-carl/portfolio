@@ -2,11 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 
 import { useForm, ValidationError } from "@formspree/react";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import icon from "./../assets/images/react-icon.svg";
 import "./../assets/styles/Contact.scss";
 
 import { HiDownload } from "react-icons/hi";
-import CheckMark from "./UI/CheckMark";
+import LoadingSpinner from "./UI/LoadingSpinner";
 
 const id = import.meta.env.VITE_FORM_ID;
 
@@ -27,9 +30,18 @@ const Contact = () => {
     return () => clearInterval(timer);
   }, [state.succeeded, state.submitting]);
 
+  const notify = () => toast.success("Message sent successfully");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      notify();
+    }
+  }, [state.succeeded]);
+
   return (
     <section id="contact" className="contact home">
       <h2 data-aos="fade-up">contact</h2>
+      <ToastContainer />
 
       <div className="connect">
         <div className="hire-container" data-aos="fade-right">
@@ -89,9 +101,8 @@ const Contact = () => {
                 <span className="label">Project</span>
               </div>
 
-              <button className="submit">
-                <span>Send</span>
-                <CheckMark />
+              <button className="submit" disabled={state.submitting}>
+                {state.submitting ? <LoadingSpinner /> : <span>Send</span>}
               </button>
             </form>
           </div>

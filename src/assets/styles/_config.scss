@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Figtree&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Figtree&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Nunito+Sans:opsz,wght@6..12,500;6..12,700;6..12,800;6..12,900&display=swap");
+// font-family: 'Fira Code', monospace;
+// font-family: 'Nunito Sans', sans-serif;
 
 *,
 *::before,
@@ -17,12 +21,14 @@ $curve: cubic-bezier(0.65, 0, 0.45, 1);
 :root {
   // --bg: #171b20;
   --bg: #0e1114;
-  --accent: #eb5e27;
+  // --accent: #eb5e27;
+  --accent: #21d8a1;
   --txt-clr: #d4d4d4;
   --heading-clr: #f6f6f6;
   --black: #000;
-  --ff-cor: "Cormorant Garamond", serif;
-  --ff-fig: Verdana, Geneva, Tahoma, sans-serif;
+  --ff-cor: "Fira Code", monospace;
+  --ff-fig: "Nunito Sans", sans-serif;
+  // --ff-fig: "Josefin Sans", sans-serif;
   --fw-400: 400;
   --fw-700: 700;
   --grad: rgba(0, 0, 0, 0.5);

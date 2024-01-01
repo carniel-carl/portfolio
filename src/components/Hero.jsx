@@ -86,7 +86,7 @@ const Hero = () => {
             I'm a Frontend{" "}
             <span className="react">
               <span aria-label="react">&lt; </span>
-              <em> React Developer </em>
+              <em> Developer </em>
               <span aria-label="react">/&gt;</span>
             </span>
           </motion.h2>

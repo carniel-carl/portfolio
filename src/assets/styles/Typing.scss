@@ -1,6 +1,7 @@
 @import "./config";
 
 .type {
+  font-weight: 900;
   &::after {
     content: "|";
     color: var(--accent);

@@ -46,10 +46,6 @@ const About = () => {
           >
             Download CV
           </a>
-
-          {/* <button type="button" onClick={clickHandler}>
-            Share
-          </button> */}
         </div>
       </div>
     </section>

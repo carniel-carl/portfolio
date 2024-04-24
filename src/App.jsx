@@ -13,8 +13,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatNav from "./components/FloatNav";
 import Loader from "./components/Loader";
-import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import { Toaster } from "sonner";
 
 export const themeContext = createContext(null);
 
@@ -62,6 +62,7 @@ function App() {
     <AnimatePresence>
       <themeContext.Provider value={{ themeToggler, lightTheme, accent }}>
         <Loader open={open} />
+        <Toaster richColors position="top-right" />
         {open && (
           <>
             <main>

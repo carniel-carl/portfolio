@@ -1,9 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 import { useForm, ValidationError } from "@formspree/react";
-
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import icon from "./../assets/images/react-icon.svg";
 import "./../assets/styles/Contact.scss";
@@ -13,6 +10,7 @@ import LoadingSpinner from "./UI/LoadingSpinner";
 
 const id = import.meta.env.VITE_FORM_ID;
 import { BsGithub } from "react-icons/bs";
+import { toast } from "sonner";
 
 const Contact = () => {
   const nameRef = useRef("");
@@ -42,7 +40,6 @@ const Contact = () => {
   return (
     <section id="contact" className="contact home">
       <h2 data-aos="fade-up">contact</h2>
-      <ToastContainer />
 
       <div className="connect">
         <div className="hire-container" data-aos="fade-right">

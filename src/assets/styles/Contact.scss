@@ -44,12 +44,26 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      .btn {
-        @extend .btn-primary;
+
+      .hire-btns {
         display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        align-self: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+
+        .btn {
+          @extend .btn-primary;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          align-self: flex-start;
+        }
+        .btnSec {
+          @extend .btn-sec;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          align-self: flex-start;
+        }
       }
     }
 

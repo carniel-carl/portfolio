@@ -12,6 +12,7 @@ import { HiDownload } from "react-icons/hi";
 import LoadingSpinner from "./UI/LoadingSpinner";
 
 const id = import.meta.env.VITE_FORM_ID;
+import { BsGithub } from "react-icons/bs";
 
 const Contact = () => {
   const nameRef = useRef("");
@@ -46,15 +47,26 @@ const Contact = () => {
       <div className="connect">
         <div className="hire-container" data-aos="fade-right">
           <p>Hire me</p>
-          <a
-            href="CHIMEZIE RESUME"
-            className="btn"
-            download="CHIMEZIE RESUME.pdf"
-            target="_blank"
-          >
-            <span>Download resume</span>
-            <HiDownload />
-          </a>
+          <div className="hire-btns">
+            <a
+              href="CHIMEZIE RESUME"
+              className="btn"
+              download="CHIMEZIE RESUME.pdf"
+              target="_blank"
+            >
+              <span>Download resume</span>
+              <HiDownload />
+            </a>
+
+            <a
+              href="https://github.com/carniel-carl"
+              className="btnSec"
+              target="_blank"
+            >
+              <span>Github</span>
+              <BsGithub />
+            </a>
+          </div>
         </div>
 
         <div className="email-container" data-aos="fade-left">

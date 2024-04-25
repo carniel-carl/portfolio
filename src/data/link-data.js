@@ -29,6 +29,7 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/carniel1/",
   github: "https://github.com/carniel-carl",
   twitter: "https://twitter.com/dripcarniel",
+  instagram: "instagram://user?username=carniel_carl",
 };
 
 export const navLinksData = {

@@ -59,6 +59,21 @@ const Project = () => {
                 <div className="project__title">
                   <p>{data.name}</p>
                 </div>
+                <div className="project__description">
+                  <p>{data?.description}</p>
+                </div>
+                <div className="project__stack">
+                  <h5>Stacks/Library/Technology</h5>
+                  <p>
+                    {data.stack &&
+                      data?.stack.map((item, index) => (
+                        <span key={item + index}>
+                          {item}
+                          {index < data.stack.length - 1 && ", "}
+                        </span>
+                      ))}
+                  </p>
+                </div>
                 <div className="preview_btns">
                   <a
                     href={data?.live}
